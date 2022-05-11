@@ -1,3 +1,13 @@
+## SOCCER-HUB
+
+Soccer-Hub is my project for the course "Programmazione Web e Servizi Digitali" carried out at UNIBS.
+The purpose of this website is to simulate the soccer-scout world.
+
+For this project i have used the framework Laravel and Bootstrap for the CSS parts.
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
