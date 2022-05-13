@@ -14,10 +14,10 @@ class giocatore extends Model
     protected $timestamps = false;
 
     public function user(){
-        return this->belongsTo('Laravel\Soccer_user');
+        return this->belongsTo('App\Models\Soccer_user');
     }
 
     public function squadra(){
-        return this->belongsTo('Laravel\squadra');
+        return this->belongsTo('App\Models\squadra');
     }
 }

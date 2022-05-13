@@ -14,10 +14,10 @@ class Soccer_user extends Model
      protected $timestamps = false;
  
      public function giocatori(){
-         return this->hasMany('Laravel\giocatore');
+         return this->hasMany('App\Models\giocatore');
      }
  
      public function squadre(){
-         return this->hasMany('Laravel\squadra');
+         return this->hasMany('App\Models\squadra');
      }
 }

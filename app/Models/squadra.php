@@ -14,10 +14,10 @@ class squadra extends Model
      protected $timestamps = false;
  
      public function user(){
-         return this->belongsTo('Laravel\Soccer_user');
+         return this->belongsTo('App\Models\Soccer_user');
      }
  
      public function giocatori(){
-         return this->hasMany('Laravel\giocatore');
+         return this->hasMany('App\Models\giocatore');
      }
 }
