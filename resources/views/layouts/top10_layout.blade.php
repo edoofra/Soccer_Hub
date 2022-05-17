@@ -1,5 +1,7 @@
 @extends('layouts.master')
 @section('contenuto_pagina')
+
+<h1 class="h1">TOP 10 </h1>
 <div class="container">
     <div class="row">
         <div class="col-md-offset-10 col-xs-6">
