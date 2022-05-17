@@ -126,4 +126,21 @@ class DataLayer {
         $users = Soccer_user::where('username',$username)->get(['id']);
         return $users[0]->id;
     }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //SEZIONE OPERAZIONI SU GIOCATORE TOP
+    public function listAttaccantiTop() {
+        $attaccanti = giocatore_top::where('ruolo','A')->orderBy('rank')->get();
+        return $attaccanti;
+    }
+
+    public function listCentrocampistiTop() {
+        $centrocampisti = giocatore_top::where('ruolo','C')->orderBy('rank')->get();
+        return $centrocampisti;
+    }
+
+    public function listDifensoriTop() {
+        $difensori = giocatore_top::where('ruolo','D')->orderBy('rank')->get();
+        return $difensori;
+    }
 }
