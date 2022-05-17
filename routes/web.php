@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/home', function () {
     return view('HomePage');
 });
+
+Route::get('/top', function () {
+    return view('layouts/top10_layout');
+});
