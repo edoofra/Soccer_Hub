@@ -18,5 +18,5 @@ Route::get('/home', function () {
 });
 
 Route::get('/top', function () {
-    return view('layouts/top10_layout');
+    return view('top10/Top_A');
 });

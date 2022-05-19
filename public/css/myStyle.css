@@ -56,6 +56,10 @@ body {
   font-weight: bold;
 }
 
+.blocco_evidenza {
+  background-color: lightblue;
+}
+
 header {
   position: relative;
   background-color: black;
