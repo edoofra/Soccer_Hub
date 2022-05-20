@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Top10Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,4 @@ Route::get('/home', function () {
     return view('HomePage');
 });
 
-Route::get('/top', function () {
-    return view('top10/Top_A');
-});
+Route::get('/top',[Top10Controller::class,'indexAttaccanti']);

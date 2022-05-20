@@ -13,7 +13,7 @@
     <div class="row blocco_evidenza">
         <blockquote class="blockquote">
             <p class="lead">@yield('citazione')</p>
-            <footer class="blockquote-footer">Thierry Henry</footer>
+            <footer class="blockquote-footer">@yield('citazione_autore')</footer>
         </blockquote>
     </div>
     <div class="row">
@@ -33,20 +33,22 @@
                         <th>Nome</th>
                         <th>Cognome</th>
                         <th>Squadra</th>
-                        <th>Caratteristica</th>
+                        <th>@yield('caratteristica')</th>
                         <th>Rank</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td>Cristiano</td>
-                        <td>Ronaldo</td>  
-                        <td>Manchester United</td>  
-                        <td>30</td>  
-                        <td>1</td>  
+                     @foreach($listaGiocatori as $giocatore_top)
+                     <tr>
+                        <td> {{ $giocatore_top->nome }} </td>
+                        <td> {{ $giocatore_top->cognome }} </td>
+                        <td> {{ $giocatore_top->squadra}} </td>
+                        <td> {{ $giocatore_top->valore_principale }} </td>
+                        <td> {{ $giocatore_top->rank }} </td>
+                        <td><a class="btn btn-primary">Contatta</a>
                     </tr>
-                   
+                    @endforeach
                 </tbody>
             </table>
         </div>

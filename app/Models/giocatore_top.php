@@ -11,6 +11,6 @@ class giocatore_top extends Model
 
      // Lo linko alla tabella giocatore top
      protected $table = 'Giocatore_top';
-     protected $timestamps = false;
+     public $timestamps = false;
  
 }
