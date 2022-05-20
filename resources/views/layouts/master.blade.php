@@ -35,11 +35,11 @@
             Top 10
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Attaccanti</a>
+            <a class="dropdown-item" href="{{ route('attaccantiTop.index') }}">Attaccanti</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Centrocampisti</a>
+            <a class="dropdown-item" href="{{ route('centrocampistiTop.index') }}">Centrocampisti</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Difensori</a>
+            <a class="dropdown-item" href="{{ route('difensoriTop.index') }}">Difensori</a>
           </div>
         </li>
         <li class="nav-item">

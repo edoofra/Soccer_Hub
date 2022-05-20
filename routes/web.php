@@ -19,6 +19,6 @@ Route::get('/home', function () {
 });
 
 //rotte per la sezione dei top accessibile anche senza login
-Route::get('/top_A',[Top10Controller::class,'indexAttaccanti']);
-Route::get('/top_C',[Top10Controller::class,'indexCentrocampisti']);
-Route::get('/top_D',[Top10Controller::class,'indexDifensori']);
+Route::get('/top_A',[Top10Controller::class,'indexAttaccanti'])->name("attaccantiTop.index");
+Route::get('/top_C',[Top10Controller::class,'indexCentrocampisti'])->name("centrocampistiTop.index");
+Route::get('/top_D',[Top10Controller::class,'indexDifensori'])->name("difensoriTop.index");
