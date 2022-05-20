@@ -18,4 +18,7 @@ Route::get('/home', function () {
     return view('HomePage');
 });
 
-Route::get('/top',[Top10Controller::class,'indexAttaccanti']);
+//rotte per la sezione dei top accessibile anche senza login
+Route::get('/top_A',[Top10Controller::class,'indexAttaccanti']);
+Route::get('/top_C',[Top10Controller::class,'indexCentrocampisti']);
+Route::get('/top_D',[Top10Controller::class,'indexDifensori']);
