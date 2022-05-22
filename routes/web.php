@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Top10Controller;
-
+use App\Http\Controllers\FrontController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +14,8 @@ use App\Http\Controllers\Top10Controller;
 |
 */
 
-Route::get('/home', function () {
-    return view('HomePage');
-});
+
+Route::get('/home',[FrontController::class,'goHome'])->name('goHome');
 
 //rotte per la sezione dei top accessibile anche senza login
 Route::get('/top_A',[Top10Controller::class,'indexAttaccanti'])->name("attaccantiTop.index");

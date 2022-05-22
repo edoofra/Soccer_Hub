@@ -20,16 +20,13 @@
 <body>
   <!--Parte relativa alla navbar-->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand mb-0 h1 accent" href="#">@yield ('titoloGrande')</a>
+    <a class="navbar-brand mb-0 h1 accent" href="{{ route('goHome') }}">SOCCER HUB</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Top 10
@@ -42,6 +39,7 @@
             <a class="dropdown-item" href="{{ route('difensoriTop.index') }}">Difensori</a>
           </div>
         </li>
+        <!-- 
         <li class="nav-item">
           <a class="nav-link disabled" href="#">Disabled</a>
         </li>
@@ -50,6 +48,7 @@
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0 accent" type="submit">Search</button>
       </form>
+      -->
     </div>
   </nav>
 
@@ -69,7 +68,7 @@
     <div class="container px-5">
       <div class="row align-items-center justify-content-between flex-column flex-sm-row">
         <div class="col-auto">
-          <div class="small m-0 text-white">Copyright &copy; Your Website 2022</div>
+          <div class="small m-0 text-white">Copyright &copy; Soccer Hub Company 2022</div>
         </div>
         <div class="col-auto">
           <a class="link-light small" href="#!">Privacy</a>
