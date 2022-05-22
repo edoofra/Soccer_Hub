@@ -1,8 +1,6 @@
 @extends('layouts.master')
 
-@section('titolo', 'Soccer Hub')
-@section('titolo_grande', 'SOCCER_HUB')
-
+@section('titolo','Soccer Hub')
 @section('copertina_pagina')
 <!-- parte relativa alla home con il video di presentazione in background-->
 <header>
