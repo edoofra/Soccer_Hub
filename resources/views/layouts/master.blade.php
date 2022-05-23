@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
   <!-- Fogli di stile -->
-  <link rel="stylesheet" href="{{ url('/') }}/css/bootstrap-grid.css">
-  <link rel="stylesheet" href="{{ url('/') }}/css/bootstrap.css">
-  <link rel="stylesheet" href="{{ url('/') }}/css/bootstrap-reboot.css">
+  <link rel="stylesheet" href="{{ url('/') }}/css/bootstrap4/bootstrap-grid.css">
+  <link rel="stylesheet" href="{{ url('/') }}/css/bootstrap4/bootstrap.css">
+  <link rel="stylesheet" href="{{ url('/') }}/css/bootstrap4/bootstrap-reboot.css">
   <link rel="stylesheet" href="{{ url('/') }}/css/myStyle.css">
 
   <!-- jQuery e plugin JavaScript  -->
