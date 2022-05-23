@@ -1,67 +1,86 @@
-<link href="{{ url('/') }}/css/bootstrap4/bootstrap.css" rel="stylesheet">
-<link rel="stylesheet" href="{{ url('/') }}/css/login.css">
+
+<link rel="stylesheet" href="{{ url('/') }}/css/bootstrap.css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+
+<!--MODIFICA -->
 
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-10 col-xl-9 mx-auto">
-        <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
-          <div class="card-img-left d-none d-md-flex">
-            <!-- Background image for card set in CSS! -->
-          </div>
-          <div class="card-body p-4 p-sm-5">
-            <h5 class="card-title text-center mb-5 fw-light fs-5">Register</h5>
-            <form>
+        <div class="container">
+            <div class="row" style="margin-top: 4em">
+                <div class="col-md-6 col-md-offset-3">
+                    <div>
+                        <ul class="nav nav-tabs">
+                            <li class="attive"><a href="#login-form" data-toggle="tab">{{ trans('labels.login') }}</a></li>
+                            <li><a href="#register-form" data-toggle="tab">{{ trans('labels.register') }}</a></li>
+                        </ul>
+                    </div>
 
-              <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInputUsername" placeholder="myusername" required autofocus>
-                <label for="floatingInputUsername">Username</label>
-              </div>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="login-form">
+                            <form id="login-form" action="#" method="post" style="margin-top: 2em">
+                                @csrf
+                                <div class="form-group">
+                                    <input type="text" name="username" class="form-control" placeholder="Username"/>
+                                </div>
 
-              <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com">
-                <label for="floatingInputEmail">Email address</label>
-              </div>
+                                <div class="form-group">
+                                    <input type="password" name="password" class="form-control" placeholder="Password"/>
+                                </div>
 
-              <hr>
+                                <div class="form-group text-center">
+                                    <input type="checkbox" name="remember">
+                                    <label for="remember">{{ trans('labels.remember') }}</label>
+                                </div>
 
-              <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
-              </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-3">
+                                            <input type="submit" name="login-submit" class="form-control btn btn-primary" value="{{ trans('labels.login') }}">
+                                        </div>
+                                    </div>
+                                </div>
 
-              <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="floatingPasswordConfirm" placeholder="Confirm Password">
-                <label for="floatingPasswordConfirm">Confirm Password</label>
-              </div>
+                                <div class="form-group">
+                                    <div class="text-center">
+                                        <a href="#">{{ trans('labels.forgotPassword') }}</a>
+                                    </div>
+                                </div>
+                            </form>
 
-              <div class="d-grid mb-2">
-                <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">Register</button>
-              </div>
+                        </div>
 
-              <a class="d-block text-center mt-2 small" href="#">Have an account? Sign In</a>
+                        <div class="tab-pane" id="register-form">
+                            <form id="register-form" action="#" method="post" style="margin-top: 2em">
+                                @csrf
+                                <div class="form-group">
+                                    <input type="text" name="username" class="form-control" placeholder="Username" value=""/>
+                                </div>
 
-              <hr class="my-4">
+                                <div class="form-group">
+                                    <input type="text" name="email" class="form-control" placeholder="{{ trans('labels.email') }}" value=""/>
+                                </div>
 
-              <div class="d-grid mb-2">
-                <button class="btn btn-lg btn-google btn-login fw-bold text-uppercase" type="submit">
-                  <i class="fab fa-google me-2"></i> Sign up with Google
-                </button>
-              </div>
+                                <div class="form-group text-center">
+                                    <input type="password" name="password" class="form-control" placeholder="Password" value=""/>
+                                </div>
 
-              <div class="d-grid">
-                <button class="btn btn-lg btn-facebook btn-login fw-bold text-uppercase" type="submit">
-                  <i class="fab fa-facebook-f me-2"></i> Sign up with Facebook
-                </button>
-              </div>
+                                <div class="form-group text-center">
+                                    <input type="password" name="confirm-password" class="form-control" placeholder="{{ trans('labels.confirmPassword') }}" value=""/>
+                                </div>
 
-            </form>
-          </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-3">
+                                            <input type="submit" name="register-submit" class="form-control btn btn-primary" value="{{ trans('labels.registerNow') }}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</body>
+    </body>
+</htm>
