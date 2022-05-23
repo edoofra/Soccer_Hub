@@ -39,11 +39,16 @@
             <a class="dropdown-item" href="{{ route('difensoriTop.index') }}">Difensori</a>
           </div>
         </li>
-        <!-- 
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
       </ul>
+      <!--Parte relativa ai tasti di login e logout -->
+       @if($logged)
+           <li class="nav-item"><a class="nav-link disabled" href='#'> LOGOUT </a></li>
+       @else
+            <li class="nav-item"><a class="nav-link disabled" href='#'> LOGIN </a></li>
+            <li class="nav-item"><a class="nav-link disabled" href='#'> REGISTER </a></li>
+       @endif
+      
+       <!-- 
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0 accent" type="submit">Search</button>
@@ -81,5 +86,4 @@
     </div>
   </footer>
 </body>
-
 </html>
