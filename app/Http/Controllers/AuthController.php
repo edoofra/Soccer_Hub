@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class AuthController extends Controller
 {
     public function goToAuthentication(){
-        return view('Auth.Auth');
+        return view('Auth.Login');
     }
     //
 }

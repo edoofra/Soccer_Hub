@@ -1,5 +1,6 @@
 
 <link rel="stylesheet" href="{{ url('/') }}/css/bootstrap.css">
+<link rel="stylesheet" href="{{ url('/') }}/css/login.css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
@@ -11,7 +12,7 @@
                 <div class="col-md-6 col-md-offset-3">
                     <div>
                         <ul class="nav nav-tabs">
-                            <li class="attive"><a href="#login-form" data-toggle="tab">{{ trans('labels.login') }}</a></li>
+                            <li class="attive"><a class="btn-primary" href="#login-form" data-toggle="tab">{{ trans('labels.login') }}</a></li>
                             <li><a href="#register-form" data-toggle="tab">{{ trans('labels.register') }}</a></li>
                         </ul>
                     </div>
