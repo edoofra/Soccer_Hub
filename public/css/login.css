@@ -11,3 +11,11 @@
     border-color: rgb(244, 85, 27);
     font-weight: bold;
   }
+
+  a {
+    color:rgb(244, 85, 27);
+  }
+
+  a:hover {
+    color:rgb(207, 59, 5);
+  }

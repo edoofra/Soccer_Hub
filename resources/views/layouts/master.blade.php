@@ -45,7 +45,7 @@
            <li class="nav-item"><a class="nav-link disabled" href='#'> LOGOUT </a></li>
        @else
             <li class="nav-item"><a class="nav-link disabled" href="{{ route('auth') }}"> LOGIN </a></li>
-            <li class="nav-item"><a class="nav-link disabled" href="{{ route('auth') }}"> REGISTER </a></li>
+            <li class="nav-item"><a class="nav-link disabled" href="{{ route('registr') }}"> REGISTER </a></li>
        @endif
       
        <!-- 
