@@ -11,7 +11,7 @@ class FrontController extends Controller
         if(isset($_SESSION['logged'])) {
             return view('HomePage')->with('logged',true)->with('loggedName', $_SESSION['loggedName']);
         } else {
-            return view('Auth.Auth')->with('logged',false);
+            return view('HomePage')->with('logged',false);
         }
     }
 }

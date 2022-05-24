@@ -44,8 +44,8 @@
        @if($logged)
            <li class="nav-item"><a class="nav-link disabled" href='#'> LOGOUT </a></li>
        @else
-            <li class="nav-item"><a class="nav-link disabled" href='#'> LOGIN </a></li>
-            <li class="nav-item"><a class="nav-link disabled" href='#'> REGISTER </a></li>
+            <li class="nav-item"><a class="nav-link disabled" href=''> LOGIN </a></li>
+            <li class="nav-item"><a class="nav-link disabled" href="{{ route('auth') }}"> REGISTER </a></li>
        @endif
       
        <!-- 

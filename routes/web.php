@@ -16,6 +16,7 @@ use App\Http\Controllers\FrontController;
 
 
 Route::get('/home',[FrontController::class,'goHome'])->name('goHome');
+Route::get('/auth',[AuthController::class,'goToAuthentication'])->name('auth');
 
 //rotte per la sezione dei top accessibile anche senza login
 Route::get('/top_A',[Top10Controller::class,'indexAttaccanti'])->name("attaccantiTop.index");
