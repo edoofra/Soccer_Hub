@@ -8,9 +8,9 @@
         <h1 class="h1">TOP 10 @yield('titolo_top_10') </h1>
     </div>
     <div class="row">
-        <p class="paragraph_home">@yield('presentazione_sezione')</p>
+        <p class="paragraph_home" style="padding:1em">@yield('presentazione_sezione')</p>
     </div>
-    <div class="row blocco_evidenza">
+    <div class="row blocco_evidenza" style="padding:1em">
         <blockquote class="blockquote">
             <p class="lead">@yield('citazione')</p>
             <footer class="blockquote-footer">@yield('citazione_autore')</footer>
