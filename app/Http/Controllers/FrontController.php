@@ -9,9 +9,9 @@ class FrontController extends Controller
     public function goHome(){
         session_start();
         if(isset($_SESSION['logged'])) {
-            return view('HomePage')->with('logged',true)->with('loggedName', $_SESSION['loggedName']);
+            return view('index')->with('logged',true)->with('loggedName', $_SESSION['loggedName']);
         } else {
-            return view('HomePage')->with('logged',false);
+            return view('index')->with('logged',false);
         }
     }
 }

@@ -16,7 +16,7 @@ use App\Http\Controllers\AuthController;
 */
 
 
-Route::get('/home',[FrontController::class,'goHome'])->name('goHome');
+Route::get('/',[FrontController::class,'goHome'])->name('goHome');
 Route::get('/auth',[AuthController::class,'goToAuthentication'])->name('auth');
 Route::get('/register',[AuthController::class,'goToRegistration'])->name('registr');
 
