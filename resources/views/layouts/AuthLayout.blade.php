@@ -11,6 +11,9 @@
             <div class="col-md-6 col-md-offset-3">
                 <div class="tab-content">
                     <div class="row text-center" style="margin-top: 1em">
+                        <img src="{{ url('/') }}/img/LOGO.png" class="img-fluid">
+                    </div>
+                    <div class="row text-center" style="margin-top: 1em">
                         <h1 class="h1">@yield('titolo_sezione')</h1>
                     </div>
                     <form action="@yield('action_bottone')" method="post" style="margin-top: 2em">
