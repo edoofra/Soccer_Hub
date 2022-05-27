@@ -4,3 +4,6 @@
 @section('citazione',"In my teams, the goalie is the first attacker, and the striker the first defender.")
 @section('citazione_autore','Johan Cruijff')
 @section('caratteristica','Contrasti')
+@section('breadcrumb')
+<li class="breadcrumb-item active" aria-current="page">Difensori</li>
+@endsection

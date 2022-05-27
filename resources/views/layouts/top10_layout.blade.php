@@ -1,7 +1,14 @@
 @extends('layouts.master')
 @section('contenuto_pagina')
 
-
+<!--Breadcrumb  -->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{route('goHome')}}">Home</a></li>
+    <li class="breadcrumb-item" aria-current="page">Top 10</li>
+    @yield('breadcrumb')
+    )
+  </ol>
 
 <div class="container">
     <div class="row">
