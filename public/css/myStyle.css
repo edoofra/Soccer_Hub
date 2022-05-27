@@ -67,6 +67,14 @@ body {
   height: 2.5rem;
 }
 
+/* code for a login label in the navbar */
+.login_label {
+  font-size: 1.25rem;
+  color:rgb(255,127,80);
+  font-weight: bold;
+}
+
+
 
 
 header {
