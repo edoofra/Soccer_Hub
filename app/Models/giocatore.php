@@ -16,8 +16,4 @@ class giocatore extends Model
     public function user(){
         return this->belongsTo('App\Models\Soccer_user');
     }
-
-    public function squadra(){
-        return this->belongsTo('App\Models\squadra');
-    }
 }

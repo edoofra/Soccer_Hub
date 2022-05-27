@@ -16,8 +16,4 @@ class Soccer_user extends Model
      public function giocatori(){
          return this->hasMany('App\Models\giocatore');
      }
- 
-     public function squadre(){
-         return this->hasMany('App\Models\squadra');
-     }
 }

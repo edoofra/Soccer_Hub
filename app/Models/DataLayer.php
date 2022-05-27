@@ -22,6 +22,94 @@ class DataLayer {
         giocatore::find($id)->delete();
     }
 
+    public function createNumberBetween($min, $max){
+        $number = rand($min, $max);
+        return $number;
+    }
+
+    //return a casual date after today using faker
+    public function createDate(){
+        $faker = Faker\Factory::create();
+        $date = $faker->dateTimeBetween('now', '+4 year');
+        return $date;
+    }
+
+    public function createValuesForAttaccante(){
+        $values = array();
+        $values['partite'] = $this->createNumberBetween(10,40);
+        $values['gol'] = $this->createNumberBetween(0,2*$values['partite']);
+        $values['assist'] = $this->createNumberBetween(0,(int)0.8*$values['gol']);
+        $values['clean_sheets'] = -1;
+        $values['ammonizioni'] = $this->createNumberBetween(0,(int)0.2*$values['partite']);
+        $values['espulsioni'] = $this->createNumberBetween(0,(int)0.2*$values['partite']);
+        $values['tiri_tentati'] = $this->createNumberBetween($values['gol'],15*$values['partite']);
+        $values['tiri_in_porta'] = $this->createNumberBetween($values['gol'],(int)0.75*$values['tiri_tentati']);
+        $values['passaggi_tentati'] = $this->createNumberBetween($values['assist'],(int)20*$values['partite']);
+        $values['passaggi_completati'] = $this->createNumberBetween($values['assist'],(int)0.8*$values['passaggi_tentati']);
+        $values['contrasti_tentati'] = $this->createNumberBetween($values['partite'],12*$values['partite']);
+        $values['contrasti_completati'] = $this->createNumberBetween((int)0.2*$values['contrasti_tentati'],(int)0.8*$values['contrasti_tentati']);
+        $values['stipendio'] = $this->createNumberBetween(0.3,30);
+        $values['valore'] = $this->createNumberBetween(0.5,150);
+        $values['data_scadenza'] = createDate();
+        return $values;
+    }
+
+    public function createValuesForCentrocampista(){
+        $values = array();
+        $values['partite'] = $this->createNumberBetween(10,40);
+        $values['gol'] = $this->createNumberBetween(0,(int)0.5*$values['partite']);
+        $values['assist'] = $this->createNumberBetween(0,2*$values['partite']);
+        $values['clean_sheets'] = -1;
+        $values['ammonizioni'] = $this->createNumberBetween(0,(int)0.5*$values['partite']);
+        $values['espulsioni'] = $this->createNumberBetween(0,(int)0.3*$values['partite']);
+        $values['tiri_tentati'] = $this->createNumberBetween($values['gol'],5*$values['partite']);
+        $values['tiri_in_porta'] = $this->createNumberBetween($values['gol'],(int)0.6*$values['tiri_tentati']);
+        $values['passaggi_tentati'] = $this->createNumberBetween($values['assist'],80*$values['partite']);
+        $values['passaggi_completati'] = $this->createNumberBetween($values['assist'],$values['passaggi_tentati']);
+        $values['contrasti_tentati'] = $this->createNumberBetween($values['partite'],15*$values['partite']);
+        $values['contrasti_completati'] = $this->createNumberBetween((int)0.4*$values['contrasti_tentati'],(int)0.8*$values['contrasti_tentati']);
+        $values['stipendio'] = $this->createNumberBetween(0.3,30);
+        $values['valore'] = $this->createNumberBetween(0.5,150);
+        $values['data_scadenza'] = createDate();
+        return $values;
+    }
+
+    public function createValuesForDifensore(){
+        $values = array();
+        $values['partite'] = $this->createNumberBetween(10,40);
+        $values['gol'] = $this->createNumberBetween(0,(int)0.1*$values['partite']);
+        $values['assist'] = $this->createNumberBetween(0,(int)0.5*$values['partite']);
+        $values['clean_sheets'] = $this->createNumberBetween(0,(int)0.6*$values['partite']);
+        $values['ammonizioni'] = $this->createNumberBetween(0,(int)0.6*$values['partite']);
+        $values['espulsioni'] = $this->createNumberBetween(0,(int)0.3*$values['partite']);
+        $values['tiri_tentati'] = $this->createNumberBetween($values['gol'],5*$values['partite']);
+        $values['tiri_in_porta'] = $this->createNumberBetween($values['gol'],(int)0.3*$values['tiri_tentati']);
+        $values['passaggi_tentati'] = $this->createNumberBetween($values['assist'],40*$values['partite']);
+        $values['passaggi_completati'] = $this->createNumberBetween($values['assist'],(int)0.8*$values['passaggi_tentati']);
+        $values['contrasti_tentati'] = $this->createNumberBetween($values['partite'],25*$values['partite']);
+        $values['contrasti_completati'] = $this->createNumberBetween((int)0.4*$values['contrasti_tentati'],$values['contrasti_tentati']);
+        $values['stipendio'] = $this->createNumberBetween(0.3,30);
+        $values['valore'] = $this->createNumberBetween(0.5,150);
+        $values['data_scadenza'] = createDate();
+        return $values;
+    }
+
+    public function createValuesForGiocatore($ruolo){
+        $values = array();
+        switch ($ruolo){
+            case 'D':
+                $values = $this->createValuesForDifensore();
+                break;
+            case 'C':
+                $values = $this->createValuesForCentrocampista();
+                break;
+            case 'A':
+                $values = $this->createValuesForAttaccante();
+                break;
+        }
+        return $values;
+    }
+
     public function addGiocatore($nome,$cognome,$id_squadra,$id_utente,$ruolo){
         $giocatore = new giocatore;
         $giocatore->nome = $nome;
@@ -29,8 +117,23 @@ class DataLayer {
         $giocatore->id_squadra = $id_squadra;
         $giocatore->id_utente = $id_utente;
         $giocatore->ruolo = $ruolo;
+        $values = $this->createValuesForGiocatore($ruolo);
+        $giocatore->partite_giocate = $values['partite'];
+        $giocatore->gol = $values['gol'];
+        $giocatore->assist = $values['assist'];
+        $giocatore->clean_sheets = $values['clean_sheets'];
+        $giocatore->ammonizioni = $values['ammonizioni'];
+        $giocatore->espulsioni = $values['espulsioni'];
+        $giocatore->tiri_tentati = $values['tiri_tentati'];
+        $giocatore->tiri_in_porta = $values['tiri_in_porta'];
+        $giocatore->passaggi_tentati = $values['passaggi_tentati'];
+        $giocatore->passaggi_completati = $values['passaggi_completati'];
+        $giocatore->contrasti_tentati = $values['contrasti_tentati'];
+        $giocatore->contrasti_vinti = $values['contrasti_completati'];
+        $giocatore->stipendio = $values['stipendio'];
+        $giocatore->valore_mercato = $values['valore'];
+        $giocatore->scadenza_contratto = $values['data_scadenza'];
         $giocatore->save();
-        //chiedere al profe se ha senso generare dei valori random e come fare
     }
 
     public function editGiocatore($id,$nome,$cognome,$id_squadra,$ruolo){
@@ -42,59 +145,10 @@ class DataLayer {
         $giocatore->save();
     }
 
-    public function findGiocatoreBySquadraIdAndUserId($id_squadra,$id_utente){
-        $giocatori = giocatore::where('id_squadra',$id_squadra)->where('id_utente',$id_utente)->get();
-        if(count($giocatori)!=0){
-            return $giocatori; //lui qua mette return true ma meh
-        }
-        else {
-            return false;
-        }
-    }
-
     public function findGiocatoreByUserId($id_utente){
         $giocatori = giocatore::where('id_utente',$id_utente)->get();
         if(count($giocatori)!=0){
             return $giocatori; //lui qua mette return true ma meh
-        }
-        else {
-            return false;
-        }
-    }
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //SEZIONE OPERAZIONI SU SQUADRA
-    public function listSquadre($utente) {
-        $squadre = Squadra::where('id_utente',$utente)->get();
-        return $squadre;
-    }
-
-    public function findSquadraById($id){
-        return Squadra::find($id);
-    }
-
-    public function deleteSquadra($id){
-        Squadra::find($id)->delete();
-    }
-
-    public function addSquadra($nome,$campionato,$id_utente){
-        $squadra = new squadra;
-        $squadra->nome = $nome;
-        $squadra->id_utente = $id_utente;
-        $squadra->campionato = $campionato;
-        $squadra->save();
-    }
-
-    public function editSquadra($id,$nome){
-        $squadra = Squadra::find($id);
-        $squadra->nome = $nome;
-        $squadra->save();
-    }
-
-    public function findSquadraByUserId($id_utente){
-        $squadre = Squadra::where('id_utente',$id_utente)->get();
-        if(count($squadre)!=0){
-            return $squadre; //lui qua mette return true ma meh
         }
         else {
             return false;
@@ -142,12 +196,6 @@ class DataLayer {
     public function listDifensoriTop() {
         $difensori = giocatore_top::where('ruolo','D')->orderBy('rank')->get();
         return $difensori;
-    }
-
-    //function for create number between 10 and 30 with faker
-    public function createNumber(){
-        $number = rand(10,30);
-        return $number;
     }
     
 }
