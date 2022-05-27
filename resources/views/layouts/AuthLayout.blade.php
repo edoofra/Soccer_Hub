@@ -11,7 +11,9 @@
             <div class="col-md-6 col-md-offset-3">
                 <div class="tab-content">
                     <div class="row text-center" style="margin-top: 1em">
+                        <a href="{{ route('goHome') }}">
                         <img src="{{ url('/') }}/img/LOGO.png" class="img-fluid">
+                        </a> 
                     </div>
                     <div class="row text-center" style="margin-top: 1em">
                         <h1 class="h1">@yield('titolo_sezione')</h1>
