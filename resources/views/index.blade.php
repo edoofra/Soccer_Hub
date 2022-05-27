@@ -61,7 +61,31 @@
     <div class="card border-0 bg-light mt-xl-5">
         <div class="container px-5 my-5">
             <div class="text-center mb-5">
-                <h1 class="fw-bolder">Frequently Asked Questions</h1>
+                <h1>Frequently Asked Questions</h1>
+            </div>
+            <div class="row">
+                <h1 class="titolo_faq col-sm-12">What is Soccer-Hub?</h1>
+            </div>
+            <div class="row">
+                <p class="paragraph_home col-sm-12">Soccer-Hub is a web portal that helps observers find the new stars of the future through detailed analyzes, the possibility of closely following the selected players and the opportunity to access statistics designed to highlight the pros and cons of each player.</p>
+            </div>
+            <div class="row">
+                <h1 class="titolo_faq col-sm-12">Who is it for?</h1>
+            </div>
+            <div class="row">
+                <p class="paragraph_home col-sm-12">Soccer-Hub is for everyone who is interested in the world of football and the possibility of having a closer look at the players that are in the top 10 of the world. </p>
+            </div>
+            <div class="row">
+                <h1 class="titolo_faq col-sm-12">Why should I choose Soccer-Hub?</h1>
+            </div>
+            <div class="row">
+                <p class="paragraph_home col-sm-12">because it was created by someone who loves football just like you, in order to offer everything you've always wanted.</p>
+            </div>
+            <div class="row">
+                <h1 class="titolo_faq col-sm-12">How can I use Soccer-Hub?</h1>
+            </div>
+            <div class="row">
+                <p class="paragraph_home col-sm-12">Click on the button at the top right to register and immediately become part of our world</p>
             </div>
             <div class="col text-center mb-5">
                 <div class="card-body p-4 py-lg-5">
@@ -71,13 +95,20 @@
                             <p class="text-muted mb-4">
                                 Contact us at
                                 <br />
-                                <a href="#!">support@domain.com</a>
+                                <a href="#!">Soccer-Hub.support@domain.com</a>
                             </p>
                             <div class="h6 fw-bolder">Follow us</div>
-                            <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-twitter"></i></a>
-                            <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-facebook"></i></a>
-                            <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-linkedin"></i></a>
-                            <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-youtube"></i></a>
+                            <!-- bootstrap code for social medi icons -->
+                            <div class="d-flex justify-content-center">
+                                <a href="#!" class="mx-2">
+                                    <img src="img/facebook.png" alt="facebook" class="img-fluid img_small" />
+                                </a>
+                                <a href="#!" class="mx-2">
+                                    <img src="img/twitter.png" alt="twitter" class="img-fluid img_small" />
+                                </a>
+                                <a href="#!" class="mx-2">
+                                    <img src="img/instagram.png" alt="instagram" class="img-fluid img_small" />
+                                </a>
                         </div>
                     </div>
                 </div>
