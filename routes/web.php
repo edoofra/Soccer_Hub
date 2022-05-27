@@ -24,3 +24,4 @@ Route::get('/register',[AuthController::class,'goToRegistration'])->name('regist
 Route::get('/top_A',[Top10Controller::class,'indexAttaccanti'])->name("attaccantiTop.index");
 Route::get('/top_C',[Top10Controller::class,'indexCentrocampisti'])->name("centrocampistiTop.index");
 Route::get('/top_D',[Top10Controller::class,'indexDifensori'])->name("difensoriTop.index");
+

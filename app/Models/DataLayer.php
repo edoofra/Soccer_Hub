@@ -143,4 +143,11 @@ class DataLayer {
         $difensori = giocatore_top::where('ruolo','D')->orderBy('rank')->get();
         return $difensori;
     }
+
+    //function for create number between 10 and 30 with faker
+    public function createNumber(){
+        $number = rand(10,30);
+        return $number;
+    }
+    
 }
