@@ -26,14 +26,11 @@
                                 </div>
                             </div>
                         </div>
+                        @yield('question1')
+                        @yield('question2')
                         <div class="form-group">
                             <div class="text-center">
-                                <a href="@yield('action_question1')">@yield('question1')</a>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="text-center">
-                                <a href="@yield('action_question2')">@yield('question2')</a>
+                                <a href="@yield('action_question2')"></a>
                             </div>
                         </div>
                     </form>

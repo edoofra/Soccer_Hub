@@ -19,7 +19,18 @@
 </div>
 @endsection
 @section('label_bottone','REGISTER')
-@section('question1','Have you read our FAQ?')
-@section('action_question1','#')
-@section('question2','Already Registered?')
-@section('action_question2',"{{ route('auth') }}")
+@section('question1')
+<div class="form-group">
+    <div class="text-center">
+        <a href="{{ route('goHome') }}">Have you read our FAQ?</a>
+    </div>
+</div>
+@endsection
+@section('question2')
+<div class="form-group">
+    <div class="text-center">
+        <a href="{{ route('auth') }}">Already Registered?</a>
+    </div>
+</div>
+@endsection
+

@@ -16,7 +16,18 @@
 </div>
 @endsection
 @section('label_bottone','LOGIN')
-@section('question1','Forgot Password?')
-@section('action_question1',"#")
-@section('question2','Need to register?')
+@section('question1')
+<div class="form-group">
+    <div class="text-center">
+        <a href="#">Forgot Password?</a>
+    </div>
+</div>
+@endsection
+@section('question2')
+<div class="form-group">
+    <div class="text-center">
+        <a href="{{ route('registr') }}">Don't have an account?</a>
+    </div>
+</div>
+@endsection
 @section('action_question2',"{{ route('registr') }}")
