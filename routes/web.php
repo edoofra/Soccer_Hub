@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Top10Controller;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PlayerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +26,5 @@ Route::get('/top_A',[Top10Controller::class,'indexAttaccanti'])->name("attaccant
 Route::get('/top_C',[Top10Controller::class,'indexCentrocampisti'])->name("centrocampistiTop.index");
 Route::get('/top_D',[Top10Controller::class,'indexDifensori'])->name("difensoriTop.index");
 
+//rotte per la gestione dei giocatori
+Route::get('/addPlayer',[PlayerController::class,'goToAggiuntaGiocatore'])->name('addPlayer');
