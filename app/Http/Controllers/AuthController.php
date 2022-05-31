@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use App\Models\DataLayer;
 
 
@@ -23,11 +24,17 @@ class AuthController extends Controller
         {
             $_SESSION['logged'] = true;
             $_SESSION['loggedName'] = $request->input('username');
-            return Redirect::to(route('index'));
+            return Redirect::to(route('goHome'));
 
         }
        
         //return view('auth.authErrorPage');
     }
+
+    public function registration(Request $request) {
+        $dl = new DataLayer();
+        $dl->addUser($request->input('username'), $request->input('password'), $request->input('email'));
+        return Redirect::to(route('auth'));
+    }    
     
 }
