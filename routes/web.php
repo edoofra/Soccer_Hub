@@ -20,6 +20,7 @@ use App\Http\Controllers\PlayerController;
 Route::get('/',[FrontController::class,'goHome'])->name('goHome');
 Route::get('/auth',[AuthController::class,'goToAuthentication'])->name('auth');
 Route::get('/register',[AuthController::class,'goToRegistration'])->name('registr');
+Route::post('/login',[AuthController::class,'login'])->name('login');
 
 //rotte per la sezione dei top accessibile anche senza login
 Route::get('/top_A',[Top10Controller::class,'indexAttaccanti'])->name("attaccantiTop.index");
@@ -28,3 +29,7 @@ Route::get('/top_D',[Top10Controller::class,'indexDifensori'])->name("difensoriT
 
 //rotte per la gestione dei giocatori
 Route::get('/addPlayer',[PlayerController::class,'goToAggiuntaGiocatore'])->name('addPlayer');
+
+
+//rotte per il controllo dei campi tramite JS e ajax
+Route::get('/ajaxControlNomeCognome',[PlayerController::class,'checkNomeCognome'])->name('checkNomeCognome');

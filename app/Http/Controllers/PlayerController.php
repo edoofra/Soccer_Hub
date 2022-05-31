@@ -15,4 +15,13 @@ class PlayerController extends Controller
         }
         
     }
+
+    public function checkNomeCognome(Request $request){
+        $dl = new DataLayer();
+        if($dl->findGiocatoreByName($request->nome,$request->cognome)){
+            return response()->json(['error' => 'Giocatore già presente']);
+        } else {
+            return response()->json(['success' => 'Giocatore non presente']);
+        }
+    }
 }

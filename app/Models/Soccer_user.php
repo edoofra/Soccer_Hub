@@ -11,7 +11,7 @@ class Soccer_user extends Model
     
      // Lo linko alla tabella utente
      protected $table = 'utente';
-     protected $timestamps = false;
+     public $timestamps = false;
  
      public function giocatori(){
          return this->hasMany('App\Models\giocatore');

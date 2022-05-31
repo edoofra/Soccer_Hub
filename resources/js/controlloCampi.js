@@ -11,7 +11,24 @@ function controlloNomeCognome(nome, cognome) {
         title.innerHTML("I campi nome e cognome non possono essere vuoti");
     }
     else {
-     
+        $.ajax({
+            type: 'GET',
+            url: 'ajaxControlNomeCognome',
+            data: {nomeCercato:nome, cognomeCercato: cognome},
+            success: function(data) {
+                if(data == "success") {
+                    $('form[]').submit();
+                }
+                else {
+                    alert("Nome e cognome già presenti nel database");
+                    //recupera campo invalid title
+                    var title = document.getElementById("invalidTitle");
+                    title.innerHTML("Nome e cognome già presenti nel database");
+                }
+                
+            }
+        });
+        
     }
     
 

@@ -1,6 +1,8 @@
 @extends('layouts.AuthLayout')
 @section('titolo_sezione','WELCOME BACK')
-@section('action_bottone','#')
+@section('action_bottone')
+<form action="{{ route('login') }}" method="post" style="margin-top: 2em">
+@endsection
 @section('campi_form')
 <div class="form-group">
     <input type="text" name="username" class="form-control" placeholder="Username"/>

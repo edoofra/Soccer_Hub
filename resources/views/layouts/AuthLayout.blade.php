@@ -18,7 +18,7 @@
                     <div class="row text-center" style="margin-top: 1em">
                         <h1 class="h1">@yield('titolo_sezione')</h1>
                     </div>
-                    <form action="@yield('action_bottone')" method="post" style="margin-top: 2em">
+                    @yield('action_bottone')
                         @csrf
                         @yield('campi_form')
                         <div class="form-group">

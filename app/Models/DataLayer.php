@@ -155,6 +155,16 @@ class DataLayer {
         }
     }
 
+    public function findGiocatoreByName($nome,$cognome){
+        $giocatori = giocatore::where('nome',$nome)->where('cognome',$cognome)->get();
+        if(count($giocatori)!=0){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //SEZIONE OPERAZIONI SU UTENTE
