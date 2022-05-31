@@ -3,12 +3,14 @@
 @section('action_bottone','#')
 @section('campi_form')
 <div class="form-group">
-    <input type="text" name="username" class="form-control" placeholder="Nome"/>
+    <input type="text" name="nome" class="form-control" placeholder="Nome"/>
 </div>
+<span id='Invalid title'></span>
 
 <div class="form-group">
      <input type="text" name="cognome" class="form-control" placeholder="Cognome"/>
 </div>
+<span id='Invalid title'></span>
 
 <div class="form-group">
      <input type="text" name="squadra" class="form-control" placeholder="Squadra"/>
