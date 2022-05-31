@@ -10,7 +10,7 @@ class Soccer_user extends Model
     use HasFactory;
     
      // Lo linko alla tabella utente
-     protected $table = 'utente';
+     protected $table = 'users';
      public $timestamps = false;
  
      public function giocatori(){
