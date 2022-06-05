@@ -40,7 +40,7 @@ class AuthController extends Controller
     public function logout(){
         session_start();
         session_destroy();
-        return Redirect::to(route('index'));
+        return Redirect::to(route('goHome'));
     }
     
 }
