@@ -27,8 +27,22 @@ function controlloNomeCognome(nome, cognome) {
                 }
                 
             }
-        });
-        
+        }); 
+    }
+
+    function controlloCampiLogin(username, password){
+
+        var username = $("username");
+        var password = $("password");
+        if (nome.trim() === "" || cognome.trim() === "") {
+            alert("I campi username e password non possono essere vuoti");
+            //recupera campo invalid title
+            var title = document.getElementById("invalidTitle");
+            title.innerHTML("I campi username e password non possono essere vuoti");
+        }
+        else {
+            $('form[id=formLogin]').submit();
+        }
     }
     
 
