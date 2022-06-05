@@ -1,15 +1,31 @@
 @extends('layouts.AuthLayout')
+@section('authScript')
+<script>
+    function controlloCampiLogin(){
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        if (username.trim() === "" || password.trim() === "") {
+            alert("I campi username e password non possono essere vuoti");
+            return false;
+        }
+        else{
+            var form = document.getElementById("login-form");
+            form.submit();
+        }
+    }
+</script>
+@endsection
 @section('titolo_sezione','WELCOME BACK')
 @section('action_bottone')
-<form action="{{ route('login') }}" method="post" style="margin-top: 2em">
+<form action="{{ route('login') }}" id ="login-form" method="post" style="margin-top: 2em" onsubmit="event.preventDefault(); controlloCampiLogin()">
 @endsection
 @section('campi_form')
 <div class="form-group">
-    <input type="text" name="username" class="form-control" placeholder="Username"/>
+    <input type="text" id="username" name="username" class="form-control" placeholder="Username"/>
 </div>
 
 <div class="form-group">
-     <input type="password" name="password" class="form-control" placeholder="Password"/>
+     <input type="password" id="password" name="password" class="form-control" placeholder="Password"/>
 </div>
 
 <div class="form-group text-center">
