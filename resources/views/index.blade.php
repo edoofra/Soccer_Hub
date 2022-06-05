@@ -49,7 +49,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 text-center">
-                <button type="button" class="btn btn-primary btn-lg">Log-in</button>
+                <button type="button" class="btn btn-primary btn-lg" id="prova1">Log-in</button>
                 <button type="button" class="btn btn-primary btn-lg">Register</button>
                 <button type="button" class="btn btn-primary btn-lg">Top 10</button>
             </div>
