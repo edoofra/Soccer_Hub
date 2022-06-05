@@ -50,7 +50,7 @@
       </ul>
       <!--Parte relativa ai tasti di login e logout -->
        @if($logged)
-           <li class="nav-item"><a class="nav-link login_label" href='#'> LOGOUT </a></li>
+           <li class="nav-item"><a class="nav-link login_label" href="{{ route('logout') }}"> LOGOUT </a></li>
        @else
             <li class="nav-item"><a class="nav-link login_label" href="{{ route('auth') }}"> LOGIN </a></li>
             <li class="nav-item"><a class="nav-link login_label" href="{{ route('registr') }}"> REGISTER </a></li>

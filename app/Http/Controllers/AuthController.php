@@ -35,6 +35,12 @@ class AuthController extends Controller
         $dl = new DataLayer();
         $dl->addUser($request->input('username'), $request->input('password'), $request->input('email'));
         return Redirect::to(route('auth'));
-    }    
+    } 
+    
+    public function logout(){
+        session_start();
+        session_destroy();
+        return Redirect::to(route('index'));
+    }
     
 }

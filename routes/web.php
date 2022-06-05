@@ -22,6 +22,7 @@ Route::get('/auth',[AuthController::class,'goToAuthentication'])->name('auth');
 Route::get('/register',[AuthController::class,'goToRegistration'])->name('registr');
 Route::post('/login',[AuthController::class,'login'])->name('login');
 Route::post('/registration',[AuthController::class,'registration'])->name('registration');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 //rotte per la sezione dei top accessibile anche senza login
 Route::get('/top_A',[Top10Controller::class,'indexAttaccanti'])->name("attaccantiTop.index");
