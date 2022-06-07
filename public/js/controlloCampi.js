@@ -44,3 +44,19 @@ function controlloCampiLogin() {
         form.submit();
     }
 }
+
+function controlloCampiRegistrazione() {
+
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var passwordConfirm = document.getElementById("passwordConfirm").value;
+    var mail = document.getElementById("mail").value;
+    if (username.trim() === "" || password.trim() === "" || passwordConfirm.trim() === "" || mail.trim() === "") {
+        alert("I campi non possono essere vuoti");
+        return false;
+    }
+    else{
+        var form = document.getElementById("registration-form");
+        form.submit();
+    }
+}
