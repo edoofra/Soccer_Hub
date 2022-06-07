@@ -1,6 +1,19 @@
 @extends('layouts.AuthLayout')
 @section('authScript')
-<script type="text/javascript" src="{{ url('/') }}/js/controlloCampi.js"> </script>
+<script>
+    function controlloCampiLogin(){
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        if (username.trim() === "" || password.trim() === "") {
+            alert("I campi username e password non possono essere vuoti");
+            return false;
+        }
+        else{
+            var form = document.getElementById("login-form");
+            form.submit();
+        }
+    }
+</script>
 @endsection
 @section('titolo_sezione','WELCOME BACK')
 @section('action_bottone')
