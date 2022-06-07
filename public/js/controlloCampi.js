@@ -29,21 +29,18 @@ function controlloNomeCognome(nome, cognome) {
             }
         }); 
     }
+}
 
-    function controlloCampiLogin(){
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
-        if (username.trim() === "" || password.trim() === "") {
-            alert("I campi username e password non possono essere vuoti");
-            return false;
-        }
-        else{
-            var form = document.getElementById("login-form");
-            form.submit();
-        }
+function controlloCampiLogin() {
+
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    if (username.trim() === "" || password.trim() === "") {
+        alert("I campi username e password non possono essere vuoti");
+        return false;
     }
-
-
-    
-
+    else{
+        var form = document.getElementById("login-form");
+        form.submit();
+    }
 }
