@@ -74,6 +74,19 @@ body {
   font-weight: bold;
 }
 
+.btn-annullamento {
+  background-color: rgb(75,75,75);
+  color: rgb(255,255,255);
+  border-color: rgb(0, 0, 0);
+}
+
+.btn-annullamento:hover {
+  color: rgb(255,255,255);
+  background-color:rgb(100,100,100);
+  border-color: rgb(0,0,0);
+  font-weight: bold;
+}
+
 
 
 

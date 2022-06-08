@@ -40,7 +40,7 @@
                 <p class="paragraph_home">Log in to enter your personal area, register to immediately access all the benefits or discover the list of the top 10 players worldwide.</p>
             </div>
             <div class="col-md-3 mx-auto col-sm-12 ">
-                <img class="img-fluid rounded mx-auto d-block" src="imgLoghi.jpeg">
+                <img class="img-fluid rounded mx-auto d-block" src="img/LOGO.png">
             </div>
         </div>
     </div>

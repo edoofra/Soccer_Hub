@@ -1,40 +1,33 @@
-<!DOCTYPE html>
-<head>
-    <link rel="stylesheet" href="{{ url('/') }}/css/bootstrap.css">
-    <link rel="stylesheet" href="{{ url('/') }}/css/login.css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="{{ asset('js/controlloCampi.js') }}"></script>
-</head>
-<body>
-    <div class="container">
-        <div class="row" style="margin-top: 4em">
-            <div class="col-md-6 col-md-offset-3">
+@extends('layouts.master')
+@section('contenuto_pagina')
+<div class="container">
+        <div class="row text-center" style="margin-top: 4em">
+            <div class="col-md-12 ">
                 <div class="tab-content">
-                    <div class="row text-center" style="margin-top: 1em">
+                    <div class="row-fluid text-center" style="margin-top: 1em">
                         <a href="{{ route('goHome') }}">
-                        <img src="{{ url('/') }}/img/LOGO.png" class="img-fluid">
+                        <img src="{{ url('/') }}/imgLoghi.jpeg" class="img-fluid">
                         </a> 
                     </div>
-                    <div class="row text-center" style="margin-top: 1em">
-                        <h1 class="h1">@yield('titolo_sezione')</h1>
+                    <div class="row-fluid text-center" style="margin-top: 1em">
+                        <h1 class=" text-center">@yield('titolo_sezione')</h1>
                     </div>
-                    <form action="@yield('action_bottone')" method="get" style="margin-top: 2em">
+                        @yield('action_bottone')
                         @csrf
                         @yield('campi_form')
                         <div class="form-group">
                             <div class="row">
-                                <div class="col-sm-6 col-sm-offset-3">
-                                    <input type="submit" name="login-submit" class="form-control btn btn-primary" value="@yield('label_bottone')" onclick="event.preventDefault(); controlloNomeCognome()">
-                                </div>
+                                @yield('bottone_submit')
+                            </div>
+                            <div class="row">
+                            <div class="col-sm-12 col-sm-offset-3">
+                                <button name="annulla-submit" class="form-control btn btn-primary btn-annullamento" style="margin-top: 1em">ANNULLA</button>
+                            </div>
                             </div>
                         </div>
-                        @yield('question1')
-                        @yield('question2')
                     </form>
                 </div>
             </div>
         </div>
     </div>
-</body>
-</html>
+@endsection
