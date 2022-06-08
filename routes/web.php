@@ -30,7 +30,8 @@ Route::get('/top_C',[Top10Controller::class,'indexCentrocampisti'])->name("centr
 Route::get('/top_D',[Top10Controller::class,'indexDifensori'])->name("difensoriTop.index");
 
 //rotte per la gestione dei giocatori
-Route::get('/addPlayer',[PlayerController::class,'goToAggiuntaGiocatore'])->name('addPlayer');
+Route::get('/addPlayerForm',[PlayerController::class,'goToAggiuntaGiocatore'])->name('addPlayerForm');
+Route::post('/addPlayer',[PlayerController::class,'AggiungiGiocatore'])->name('addPlayer');
 
 
 //rotte per il controllo dei campi tramite JS e ajax

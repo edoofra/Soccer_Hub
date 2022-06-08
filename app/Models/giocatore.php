@@ -11,7 +11,7 @@ class giocatore extends Model
 
     // Lo linko alla tabella giocatore
     protected $table = 'giocatore';
-    protected $timestamps = false;
+    public $timestamps = false;
 
     public function user(){
         return this->belongsTo('App\Models\Soccer_user');

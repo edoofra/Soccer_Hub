@@ -3,7 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Model;
+use Faker\Factory as Faker;
 
 class DataLayer {
     use HasFactory;
@@ -29,9 +31,10 @@ class DataLayer {
 
     //return a casual date after today using faker
     public function createDate(){
-        $faker = Faker\Factory::create();
+        //use faker to create a fake date
+        $faker = Faker::create();
         $date = $faker->dateTimeBetween('now', '+4 year');
-        return $date;
+         return $date;
     }
 
     public function createValuesForAttaccante(){
@@ -39,7 +42,7 @@ class DataLayer {
         $values['partite'] = $this->createNumberBetween(10,40);
         $values['gol'] = $this->createNumberBetween(0,2*$values['partite']);
         $values['assist'] = $this->createNumberBetween(0,(int)0.8*$values['gol']);
-        $values['clean_sheets'] = -1;
+        $values['clean_sheets'] = 1;
         $values['ammonizioni'] = $this->createNumberBetween(0,(int)0.2*$values['partite']);
         $values['espulsioni'] = $this->createNumberBetween(0,(int)0.2*$values['partite']);
         $values['tiri_tentati'] = $this->createNumberBetween($values['gol'],15*$values['partite']);
@@ -50,7 +53,7 @@ class DataLayer {
         $values['contrasti_completati'] = $this->createNumberBetween((int)0.2*$values['contrasti_tentati'],(int)0.8*$values['contrasti_tentati']);
         $values['stipendio'] = $this->createNumberBetween(0.3,30);
         $values['valore'] = $this->createNumberBetween(0.5,150);
-        $values['data_scadenza'] = createDate();
+        $values['data_scadenza'] = $this->createDate();
         return $values;
     }
 
@@ -70,7 +73,7 @@ class DataLayer {
         $values['contrasti_completati'] = $this->createNumberBetween((int)0.4*$values['contrasti_tentati'],(int)0.8*$values['contrasti_tentati']);
         $values['stipendio'] = $this->createNumberBetween(0.3,30);
         $values['valore'] = $this->createNumberBetween(0.5,150);
-        $values['data_scadenza'] = createDate();
+        // $values['data_scadenza'] = createDate();
         return $values;
     }
 
@@ -79,7 +82,7 @@ class DataLayer {
         $values['partite'] = $this->createNumberBetween(10,40);
         $values['gol'] = $this->createNumberBetween(0,(int)0.1*$values['partite']);
         $values['assist'] = $this->createNumberBetween(0,(int)0.5*$values['partite']);
-        $values['clean_sheets'] = $this->createNumberBetween(0,(int)0.6*$values['partite']);
+        $values['clean_sheets'] = $this->createNumberBetween(0,0.6*$values['partite']);
         $values['ammonizioni'] = $this->createNumberBetween(0,(int)0.6*$values['partite']);
         $values['espulsioni'] = $this->createNumberBetween(0,(int)0.3*$values['partite']);
         $values['tiri_tentati'] = $this->createNumberBetween($values['gol'],5*$values['partite']);
@@ -110,18 +113,19 @@ class DataLayer {
         return $values;
     }
 
-    public function addGiocatore($nome,$cognome,$id_squadra,$id_utente,$ruolo){
+    public function addGiocatore($nome,$cognome,$età,$squadra,$id_utente,$ruolo){
         $giocatore = new giocatore;
         $giocatore->nome = $nome;
         $giocatore->cognome = $cognome;
-        $giocatore->id_squadra = $id_squadra;
-        $giocatore->id_utente = $id_utente;
+        $giocatore->età = $età;
+        $giocatore->squadra = $squadra;
+        $giocatore->user_id = $id_utente;
         $giocatore->ruolo = $ruolo;
         $values = $this->createValuesForGiocatore($ruolo);
         $giocatore->partite_giocate = $values['partite'];
         $giocatore->gol = $values['gol'];
         $giocatore->assist = $values['assist'];
-        $giocatore->clean_sheets = $values['clean_sheets'];
+        $giocatore->clean_sheet = $values['clean_sheets'];
         $giocatore->ammonizioni = $values['ammonizioni'];
         $giocatore->espulsioni = $values['espulsioni'];
         $giocatore->tiri_tentati = $values['tiri_tentati'];
