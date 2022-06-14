@@ -33,13 +33,21 @@ function controlloNomeCognome(nome, cognome) {
 
 function controlloCampiLogin() {
 
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-    if (username.trim() === "" || password.trim() === "") {
-        alert("I campi username e password non possono essere vuoti");
+    username = $("#username");
+    username_msg = $("#invalid-username");
+    
+    password = $("#password");
+    password_msg = $("#invalid-password");
+
+    if (username.val().trim() === "") {
+        username_msg.html("The username field must not be empty");
+        username.focus();
         return false;
-    }
-    else{
+    }else if(password.trim() === ""){
+        password_msg.html("The password field must not be empty");
+        password.focus();
+        return false;
+    }else{
         var form = document.getElementById("login-form");
         form.submit();
     }

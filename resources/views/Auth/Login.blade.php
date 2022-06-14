@@ -9,10 +9,12 @@
 @section('campi_form')
 <div class="form-group">
     <input type="text" id="username" name="username" class="form-control" placeholder="Username"/>
+    <span class="invalid-input" id="invalid-username"></span>
 </div>
 
 <div class="form-group">
      <input type="password" id="password" name="password" class="form-control" placeholder="Password"/>
+     <span class="invalid-input" id="invalid-password"></span>
 </div>
 
 <div class="form-group text-center">
