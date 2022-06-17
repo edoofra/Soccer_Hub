@@ -9,18 +9,22 @@
 @section('campi_form')
 <div class="form-group">
     <input type="text" name="username" id="username" class="form-control" placeholder="Username" value=""/>
+    <span class="invalid-input" id="invalid-username"></span>
 </div>
 
 <div class="form-group">
     <input type="text" name="email" id="mail" class="form-control" placeholder="{{ trans('labels.email') }}" value=""/>
+    <span class="invalid-input" id="invalid-mail"></span>
 </div>
 
 <div class="form-group text-center">
     <input type="password" name="password" id="password" class="form-control" placeholder="Password" value=""/>
+    <span class="invalid-input" id="invalid-password"></span>
 </div>
 
 <div class="form-group text-center">
     <input type="password" name="confirm-password" id="passwordConfirm" class="form-control" placeholder="{{ trans('labels.confirmPassword') }}" value=""/>
+    <span class="invalid-input" id="invalid-passwordConfirm"></span>
 </div>
 @endsection
 @section('label_bottone','REGISTER')

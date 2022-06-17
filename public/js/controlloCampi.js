@@ -43,7 +43,7 @@ function controlloCampiLogin() {
         username_msg.html("The username field must not be empty");
         username.focus();
         return false;
-    }else if(password.trim() === ""){
+    }else if(password.val().trim() === ""){
         password_msg.html("The password field must not be empty");
         password.focus();
         return false;
@@ -55,16 +55,65 @@ function controlloCampiLogin() {
 
 function controlloCampiRegistrazione() {
 
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-    var passwordConfirm = document.getElementById("passwordConfirm").value;
-    var mail = document.getElementById("mail").value;
-    if (username.trim() === "" || password.trim() === "" || passwordConfirm.trim() === "" || mail.trim() === "") {
-        alert("I campi non possono essere vuoti");
-        return false;
-    }
-    else{
+    username = $("#username");
+    username_msg = $("#invalid-username");
+    
+    password = $("#password");
+    password_msg = $("#invalid-password");
+
+    password_confirm = $("#passwordConfirm");
+    password_confirm_msg = $("#invalid-passwordConfirm");
+    
+    mail = $("#mail");
+    mail_msg = $("#invalid-mail");
+
+    error = false;
+
+    if (username.val().trim() === "") {
+        username_msg.html("The username field must not be empty");
+        username.focus();
+        error = true;
+    }else if(password.val().trim() === ""){
+        password_msg.html("The password field must not be empty");
+        password.focus();
+        error = true;
+    }else if(password_confirm.val().trim() === ""){
+        password_confirm_msg.html("The password confirm field must not be empty");
+        password_confirm.focus();
+        error = true;
+    }else if(mail.val().trim() === ""){
+        mail_msg.html("The mail field must not be empty");
+        mail.focus();
+        error = true;
+    }else if(password.val().trim() !== password_confirm.val().trim()){ //controllo che le due password siano uguali
+        password_msg.html("The password field and the password confirm field must be equal");
+        password.focus();
+        error = true;
+    }else{
         var form = document.getElementById("registration-form");
         form.submit();
+    }
+
+    if(!error){
+        $.ajax({
+
+            type: 'GET',
+
+            url: '/ajaxRegistration',
+
+            data: {username: username.val().trim()},
+
+            success: function (data) {
+
+                if (data.found)
+                {
+                    error = true;
+                    lastName_msg.html("Author already exists in the database");
+                } else {
+                    $('form[name=author]').submit();
+                }
+            }
+
+        });
     }
 }
