@@ -89,9 +89,6 @@ function controlloCampiRegistrazione() {
         password_msg.html("The password field and the password confirm field must be equal");
         password.focus();
         error = true;
-    }else{
-        var form = document.getElementById("registration-form");
-        form.submit();
     }
 
     if(!error){
@@ -108,9 +105,10 @@ function controlloCampiRegistrazione() {
                 if (data.found)
                 {
                     error = true;
-                    lastName_msg.html("Author already exists in the database");
+                    username_msg.html("Username already exists in the database");
                 } else {
-                    $('form[name=author]').submit();
+                    var form = document.getElementById("registration-form");
+                    form.submit();
                 }
             }
 

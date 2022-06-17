@@ -42,5 +42,16 @@ class AuthController extends Controller
         session_destroy();
         return Redirect::to(route('goHome'));
     }
+
+    public function ajaxCheckUsername(Request $request){
+        $dl = new DataLayer();
+        if($dl->checkUsername($request->input('username'))){
+            $response = array('found'=>true);
+        }
+        else{
+            $response = array('found'=>false);
+        }
+        return response()->json($response);
+    }
     
 }

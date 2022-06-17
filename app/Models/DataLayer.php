@@ -196,6 +196,16 @@ class DataLayer {
         return $users[0]->id;
     }
 
+    public function checkUsername($username) {
+        $users = Soccer_user::where('username',$username)->get(['id']);
+        if(count($users) == 0){
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //SEZIONE OPERAZIONI SU GIOCATORE TOP
     public function listAttaccantiTop() {
