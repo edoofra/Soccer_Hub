@@ -1,4 +1,7 @@
 @extends('layouts.master')
+@section('script')
+<script type="text/javascript" src="{{ asset('js/revealContactInformation.js') }}"></script>
+@endsection
 @section('contenuto_pagina')
 
 <!--Breadcrumb  -->
@@ -42,6 +45,9 @@
                         <th>Squadra</th>
                         <th>@yield('caratteristica')</th>
                         <th>Rank</th>
+                        @if($logged)
+                        <th><a class="btn btn-primary" onclick="reveal()">Contatta</a></th> 
+                        @endif
                     </tr>
                 </thead>
 
@@ -53,7 +59,7 @@
                         <td> {{ $giocatore_top->squadra}} </td>
                         <td> {{ $giocatore_top->valore_principale }} </td>
                         <td> {{ $giocatore_top->rank }} </td>
-                        <td><a class="btn btn-primary">Contatta</a>
+                        <td class="playerContact" style="display: none"> {{ $giocatore_top->id }} </td>
                     </tr>
                     @endforeach
                 </tbody>
