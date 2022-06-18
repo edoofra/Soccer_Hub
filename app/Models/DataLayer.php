@@ -206,6 +206,11 @@ class DataLayer {
         }
     }
 
+    public function listUsers() {
+        $users = Soccer_user::all();
+        return $users;
+    }
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //SEZIONE OPERAZIONI SU GIOCATORE TOP
     public function listAttaccantiTop() {
