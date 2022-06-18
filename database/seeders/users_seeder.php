@@ -20,5 +20,11 @@ class users_seeder extends Seeder
             'password' => md5('edoSoccerHub'),
             'email' => 'edoardo.fra.ef@gmail.com'
         ]);
+
+        Soccer_user::create([
+            'username' => 'Marco22',
+            'password' => md5('marcoSoccerHub'),
+            'email' => 'marco22@gmail.com'
+        ]);
     }
 }
