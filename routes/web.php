@@ -34,6 +34,7 @@ Route::get('/top_D',[Top10Controller::class,'indexDifensori'])->name("difensoriT
 //rotte per la gestione dei giocatori
 Route::get('/addPlayerForm',[PlayerController::class,'goToAggiuntaGiocatore'])->name('addPlayerForm');
 Route::post('/addPlayer',[PlayerController::class,'AggiungiGiocatore'])->name('addPlayer');
+Route::get('/goToDashboard',[PlayerController::class,'goToDashboard'])->name('goToDashboard');
 
 
 //rotte per il controllo dei campi tramite JS e ajax

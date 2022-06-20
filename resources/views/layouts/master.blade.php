@@ -48,6 +48,10 @@
             <a class="dropdown-item" href="{{ route('difensoriTop.index') }}">Difensori</a>
           </div>
         </li>
+        @if($logged)
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('goToDashboard') }}">Dashboard</a>
+        @endif
       </ul>
       <!--Parte relativa ai tasti di login e logout -->
        @if($logged)

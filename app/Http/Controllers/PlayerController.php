@@ -14,8 +14,7 @@ class PlayerController extends Controller
             return view('Players.addNewPlayer')->with('logged',true)->with('loggedName', $_SESSION['loggedName']);
         } else {
             return view('Players.addNewPlayer')->with('logged',false);
-        }
-        
+        }  
     }
 
     public function aggiungiGiocatore(Request $request) {
@@ -33,5 +32,15 @@ class PlayerController extends Controller
         } else {
             return response()->json(['success' => 'Giocatore non presente']);
         }
+    }
+
+    public function goToDashboard(){
+        session_start();
+        $dl = new DataLayer();
+        $attaccanti = $dl->listAttaccantiByUserID($dl->getUserId($_SESSION['loggedName']));
+        $centrocampisti = $dl->listCentrocampistiByUserID($dl->getUserId($_SESSION['loggedName']));
+        $difensori = $dl->listDifensoriByUserID($dl->getUserId($_SESSION['loggedName']));
+        return view('Players.userHomePage')->with('logged',true)->with('loggedName', $_SESSION['loggedName'])->with('listaAttaccanti', $attaccanti)
+                ->with('listaCentrocampisti', $centrocampisti)->with('listaDifensori', $difensori); 
     }
 }

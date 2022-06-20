@@ -60,7 +60,7 @@ class DataLayer {
     public function createValuesForCentrocampista(){
         $values = array();
         $values['partite'] = $this->createNumberBetween(10,40);
-        $values['gol'] = $this->createNumberBetween(0,(int)0.5*$values['partite']);
+        $values['gol'] = $this->createNumberBetween(0,0.5*$values['partite']);
         $values['assist'] = $this->createNumberBetween(0,2*$values['partite']);
         $values['clean_sheets'] = 1;
         $values['ammonizioni'] = $this->createNumberBetween(0,0.5*$values['partite']);
@@ -80,8 +80,8 @@ class DataLayer {
     public function createValuesForDifensore(){
         $values = array();
         $values['partite'] = $this->createNumberBetween(10,40);
-        $values['gol'] = $this->createNumberBetween(0,(int)0.1*$values['partite']);
-        $values['assist'] = $this->createNumberBetween(0,(int)0.5*$values['partite']);
+        $values['gol'] = $this->createNumberBetween(0,0.2*$values['partite']);
+        $values['assist'] = $this->createNumberBetween(0,0.5*$values['partite']);
         $values['clean_sheets'] = $this->createNumberBetween(0,0.6*$values['partite']);
         $values['ammonizioni'] = $this->createNumberBetween(0,0.6*$values['partite']);
         $values['espulsioni'] = $this->createNumberBetween(0,0.3*$values['partite']);
@@ -190,6 +190,21 @@ class DataLayer {
         else {
             return false;
         }
+    }
+
+    public function listAttaccantiByUserID($id_utente){
+        $giocatori = giocatore::where('user_id',$id_utente)->where('ruolo','A')->get();
+        return $giocatori;
+    }
+
+    public function listCentrocampistiByUserID($id_utente){
+        $giocatori = giocatore::where('user_id',$id_utente)->where('ruolo','C')->get();
+        return $giocatori;
+    }
+
+    public function listDifensoriByUserID($id_utente){
+        $giocatori = giocatore::where('user_id',$id_utente)->where('ruolo','D')->get();
+        return $giocatori;
     }
 
 
