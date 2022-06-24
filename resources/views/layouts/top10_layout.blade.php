@@ -59,7 +59,7 @@
                         <td> {{ $giocatore_top->squadra}} </td>
                         <td> {{ $giocatore_top->valore_principale }} </td>
                         <td> {{ $giocatore_top->rank }} </td>
-                        <td class="playerContact" style="display: none"> {{ $giocatore_top->id }} </td>
+                        <td class="playerContact" style="display: none"> {{ $giocatore_top->mail }} </td>
                     </tr>
                     @endforeach
                 </tbody>
