@@ -207,6 +207,10 @@ class DataLayer {
         return $giocatori;
     }
 
+    public function deletePlayer($id){
+        giocatore::find($id)->delete();
+    }
+
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //SEZIONE OPERAZIONI SU UTENTE

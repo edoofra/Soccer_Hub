@@ -36,6 +36,7 @@ Route::get('/addPlayerForm',[PlayerController::class,'goToAggiuntaGiocatore'])->
 Route::post('/addPlayer',[PlayerController::class,'AggiungiGiocatore'])->name('addPlayer');
 Route::get('/goToDashboard',[PlayerController::class,'goToDashboard'])->name('goToDashboard');
 Route::get('/deletePlayerPage/{id}',[PlayerController::class,'goToDeletePlayerPage'])->name('goToDeletePlayerPage');
+Route::get('/deletePlayer/{id}',[PlayerController::class,'deletePlayer'])->name('deletePlayer');
 
 
 //rotte per il controllo dei campi tramite JS e ajax

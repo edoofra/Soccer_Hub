@@ -41,7 +41,7 @@
                 <div class='card-body'>
                     <h5 class="card-title">CONFERMA</h5>
                     <p>il giocatore <strong>sarà rimosso permanentemente dal database</strong>,confermi?</p>
-                    <p><a class="btn btn-danger" href="#">Elimina</a></p>
+                    <p><a class="btn btn-danger" href="{{route('deletePlayer', ['id' => $giocatore->id])}}">Elimina</a></p>
                 </div>
             </div>
         </div>

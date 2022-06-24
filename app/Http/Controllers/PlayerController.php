@@ -50,4 +50,15 @@ class PlayerController extends Controller
         $giocatore = $dl->findGiocatoreById($id);
         return view('Players.deletePlayer')->with('logged',true)->with('loggedName', $_SESSION['loggedName'])->with('giocatore',$giocatore);
     }
+
+    public function deletePlayer($id){
+        session_start();
+        $dl = new DataLayer();
+        $dl->deletePlayer($id);
+        $attaccanti = $dl->listAttaccantiByUserID($dl->getUserId($_SESSION['loggedName']));
+        $centrocampisti = $dl->listCentrocampistiByUserID($dl->getUserId($_SESSION['loggedName']));
+        $difensori = $dl->listDifensoriByUserID($dl->getUserId($_SESSION['loggedName']));
+        return view('Players.userHomePage')->with('logged',true)->with('loggedName', $_SESSION['loggedName'])->with('listaAttaccanti', $attaccanti)
+                ->with('listaCentrocampisti', $centrocampisti)->with('listaDifensori', $difensori); 
+    }
 }
