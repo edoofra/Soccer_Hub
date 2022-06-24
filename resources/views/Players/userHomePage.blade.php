@@ -53,6 +53,8 @@
                         <td> {{ $attaccante->partite_giocate }} </td>
                         <td> {{ $attaccante->gol }} </td>
                         <td> {{ $attaccante->assist }} </td>
+                        <td> more </td>
+                        <td> <a class="btn btn-danger" href="{{ route('goToDeletePlayerPage', ['id' => $attaccante->id]) }}">Elimina</a> </td>
                     </tr>
                     @endforeach
                 </tbody>

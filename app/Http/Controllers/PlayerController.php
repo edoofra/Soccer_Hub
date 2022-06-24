@@ -43,4 +43,11 @@ class PlayerController extends Controller
         return view('Players.userHomePage')->with('logged',true)->with('loggedName', $_SESSION['loggedName'])->with('listaAttaccanti', $attaccanti)
                 ->with('listaCentrocampisti', $centrocampisti)->with('listaDifensori', $difensori); 
     }
+
+    public function goToDeletePlayerPage($id){
+        session_start();
+        $dl = new DataLayer();
+        $giocatore = $dl->findGiocatoreById($id);
+        return view('Players.deletePlayer')->with('logged',true)->with('loggedName', $_SESSION['loggedName'])->with('giocatore',$giocatore);
+    }
 }

@@ -35,6 +35,7 @@ Route::get('/top_D',[Top10Controller::class,'indexDifensori'])->name("difensoriT
 Route::get('/addPlayerForm',[PlayerController::class,'goToAggiuntaGiocatore'])->name('addPlayerForm');
 Route::post('/addPlayer',[PlayerController::class,'AggiungiGiocatore'])->name('addPlayer');
 Route::get('/goToDashboard',[PlayerController::class,'goToDashboard'])->name('goToDashboard');
+Route::get('/deletePlayerPage/{id}',[PlayerController::class,'goToDeletePlayerPage'])->name('goToDeletePlayerPage');
 
 
 //rotte per il controllo dei campi tramite JS e ajax
