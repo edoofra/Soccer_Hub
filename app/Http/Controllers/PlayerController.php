@@ -61,4 +61,12 @@ class PlayerController extends Controller
         return view('Players.userHomePage')->with('logged',true)->with('loggedName', $_SESSION['loggedName'])->with('listaAttaccanti', $attaccanti)
                 ->with('listaCentrocampisti', $centrocampisti)->with('listaDifensori', $difensori); 
     }
+
+    public function studyPlayer($id){
+        session_start();
+        $dl = new DataLayer();
+        $valori = $dl->creaRiassuntoValori($id);
+        $giocatore = $dl->findGiocatoreById($id);
+        return view('Players.studyPlayer')->with('logged',true)->with('loggedName', $_SESSION['loggedName'])->with('giocatore',$giocatore)->with('valori',$valori);
+    }
 }

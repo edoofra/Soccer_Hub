@@ -41,7 +41,7 @@ class DataLayer {
         $values = array();
         $values['partite'] = $this->createNumberBetween(10,40);
         $values['gol'] = $this->createNumberBetween(0,2*$values['partite']);
-        $values['assist'] = $this->createNumberBetween(0,0.8*$values['gol']);
+        $values['assist'] = $this->createNumberBetween(0,0.6*$values['gol']);
         $values['clean_sheets'] = 1;
         $values['ammonizioni'] = $this->createNumberBetween(0,0.2*$values['partite']);
         $values['espulsioni'] = $this->createNumberBetween(0,0.2*$values['partite']);
@@ -209,6 +209,15 @@ class DataLayer {
 
     public function deletePlayer($id){
         giocatore::find($id)->delete();
+    }
+
+    public function creaRiassuntoValori($id){
+        $giocatore = giocatore::find($id);
+        $valori = array();
+        $valori['attacco'] = ($giocatore->gol / ($giocatore->partite_giocate * 2))*10;
+        $valori['creatività'] = ($giocatore->assist / ($giocatore->partite_giocate * 2))*10;
+        $valori['difesa'] = ($giocatore->contrasti_vinti / $giocatore->contrasti_tentati)*10;
+        return $valori;
     }
 
 

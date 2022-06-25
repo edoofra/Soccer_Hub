@@ -53,7 +53,7 @@
                         <td> {{ $attaccante->partite_giocate }} </td>
                         <td> {{ $attaccante->gol }} </td>
                         <td> {{ $attaccante->assist }} </td>
-                        <td> more </td>
+                        <td> <a class="btn btn-primary" href="{{ route('studyPlayer', ['id' => $attaccante->id]) }}">..see more..</a> </td>
                         <td> <a class="btn btn-danger" href="{{ route('goToDeletePlayerPage', ['id' => $attaccante->id]) }}">Elimina</a> </td>
                     </tr>
                     @endforeach
@@ -137,7 +137,7 @@
                         <td> {{ $centrocampista->partite_giocate }} </td>
                         <td> {{ $centrocampista->gol }} </td>
                         <td> {{ $centrocampista->assist }} </td>
-                        <td> more </td>
+                        <td> <a class="btn btn-primary" href="{{ route('studyPlayer', ['id' => $centrocampista->id]) }}">..see more..</a> </td>
                         <td> <a class="btn btn-danger" href="{{ route('goToDeletePlayerPage', ['id' => $centrocampista->id]) }}">Elimina</a> </td>
                     </tr>
                     @endforeach
@@ -221,7 +221,7 @@
                         <td> {{ $difensore->partite_giocate }} </td>
                         <td> {{ $difensore->clean_sheet }} </td>
                         <td> {{ $difensore->contrasti_vinti }} </td>
-                        <td> more </td>
+                        <td> <a class="btn btn-primary" href="{{ route('studyPlayer', ['id' => $difensore->id]) }}">..see more..</a> </td>
                         <td> <a class="btn btn-danger" href="{{ route('goToDeletePlayerPage', ['id' => $difensore->id]) }}">Elimina</a> </td>
                     </tr>
                     @endforeach
