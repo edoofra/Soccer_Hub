@@ -9,7 +9,7 @@ use App\Models\DataLayer;
 class PlayerController extends Controller
 {
     public function goToAggiuntaGiocatore(){
-        session_start();
+        //session_start();
         if(isset($_SESSION['logged'])) {
             return view('Players.addNewPlayer')->with('logged',true)->with('loggedName', $_SESSION['loggedName']);
         } else {
@@ -18,7 +18,7 @@ class PlayerController extends Controller
     }
 
     public function aggiungiGiocatore(Request $request) {
-        session_start();
+        //session_start();
         $dl = new DataLayer();
         $user_id = $dl->getUserId($_SESSION['loggedName']);
         $dl->addGiocatore($request->input('nome'), $request->input('cognome'), $request->input('età'), $request->input('squadra'),$user_id, $request->input('ruolo'));
@@ -35,7 +35,7 @@ class PlayerController extends Controller
     }
 
     public function goToDashboard(){
-        session_start();
+        //session_start();
         $dl = new DataLayer();
         $attaccanti = $dl->listAttaccantiByUserID($dl->getUserId($_SESSION['loggedName']));
         $centrocampisti = $dl->listCentrocampistiByUserID($dl->getUserId($_SESSION['loggedName']));
@@ -45,14 +45,14 @@ class PlayerController extends Controller
     }
 
     public function goToDeletePlayerPage($id){
-        session_start();
+        //session_start();
         $dl = new DataLayer();
         $giocatore = $dl->findGiocatoreById($id);
         return view('Players.deletePlayer')->with('logged',true)->with('loggedName', $_SESSION['loggedName'])->with('giocatore',$giocatore);
     }
 
     public function deletePlayer($id){
-        session_start();
+        //session_start();
         $dl = new DataLayer();
         $dl->deletePlayer($id);
         $attaccanti = $dl->listAttaccantiByUserID($dl->getUserId($_SESSION['loggedName']));
@@ -63,7 +63,7 @@ class PlayerController extends Controller
     }
 
     public function studyPlayer($id){
-        session_start();
+        //session_start();
         $dl = new DataLayer();
         $valori = $dl->creaRiassuntoValori($id);
         $giocatore = $dl->findGiocatoreById($id);
