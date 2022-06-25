@@ -100,13 +100,13 @@
                             <div class="h6 fw-bolder">Follow us</div>
                             <!-- bootstrap code for social medi icons -->
                             <div class="d-flex justify-content-center">
-                                <a href="#!" class="mx-2">
+                                <a href="https://www.facebook.com" class="mx-2">
                                     <img src="img/facebook.png" alt="facebook" class="img-fluid img_small" />
                                 </a>
-                                <a href="#!" class="mx-2">
+                                <a href="https://twitter.com" class="mx-2">
                                     <img src="img/twitter.png" alt="twitter" class="img-fluid img_small" />
                                 </a>
-                                <a href="#!" class="mx-2">
+                                <a href="https://www.instagram.com" class="mx-2">
                                     <img src="img/instagram.png" alt="instagram" class="img-fluid img_small" />
                                 </a>
                         </div>
