@@ -17,7 +17,7 @@
         <div class="d-flex h-100 text-center align-items-center">
             <div class="w-100 text-white">
                 <h1 class="display-3 title_video col-sm-12">SOCCER-HUB</h1>
-                <p class="lead mb-0 subtitle_video">A web portal for scouting the next cracks in world football.</p>
+                <p class="lead mb-0 subtitle_video">{{ trans('labels.copertina') }}</p>
             </div>
         </div>
     </div>
@@ -35,9 +35,9 @@
         </div>
         <div class="row">
             <div class="col-md-8 ">
-                <p class="paragraph_home">Are you looking for the next talent that can make millions of fans cheer in this way? Then Soccer-Hub is what you are looking for!</p>
-                <p class="paragraph_home">A platform that helps observers find the new stars of the future through detailed analyzes, the possibility of closely following the selected players and the opportunity to access statistics designed to highlight the pros and cons of each player.</p>
-                <p class="paragraph_home">Log in to enter your personal area, register to immediately access all the benefits or discover the list of the top 10 players worldwide.</p>
+                <p class="paragraph_home">{{ trans('labels.hero1') }}</p>
+                <p class="paragraph_home">{{ trans('labels.hero2') }}</p>
+                <p class="paragraph_home">{{ trans('labels.hero3') }}</p>
             </div>
             <div class="col-md-3 mx-auto col-sm-12 ">
                 <img class="img-fluid rounded mx-auto d-block" src="img/LOGO.png">
@@ -49,8 +49,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 text-center">
-                <button type="button" class="btn btn-primary btn-lg" id="prova1">Log-in</button>
-                <button type="button" class="btn btn-primary btn-lg">Register</button>
+                <button type="button" class="btn btn-primary btn-lg" id="prova1">{{ trans('labels.loginLabel') }}</button>
+                <button type="button" class="btn btn-primary btn-lg">{{ trans('labels.registerLabel') }}</button>
                 <button type="button" class="btn btn-primary btn-lg">Top 10</button>
             </div>
         </div>
@@ -61,43 +61,43 @@
     <div class="card border-0 bg-light mt-xl-5">
         <div class="container px-5 my-5">
             <div class="text-center mb-5">
-                <h1>Frequently Asked Questions</h1>
+                <h1>{{ trans('labels.FAQlabel') }}</h1>
             </div>
             <div class="row">
-                <h1 class="titolo_faq col-sm-12">What is Soccer-Hub?</h1>
+                <h1 class="titolo_faq col-sm-12">{{ trans('labels.q1') }}</h1>
             </div>
             <div class="row">
-                <p class="paragraph_home col-sm-12">Soccer-Hub is a web portal that helps observers find the new stars of the future through detailed analyzes, the possibility of closely following the selected players and the opportunity to access statistics designed to highlight the pros and cons of each player.</p>
+                <p class="paragraph_home col-sm-12">{{ trans('labels.a1') }}</p>
             </div>
             <div class="row">
-                <h1 class="titolo_faq col-sm-12">Who is it for?</h1>
+                <h1 class="titolo_faq col-sm-12">{{ trans('labels.q2') }}</h1>
             </div>
             <div class="row">
-                <p class="paragraph_home col-sm-12">Soccer-Hub is for everyone who is interested in the world of football and the possibility of having a closer look at the players that are in the top 10 of the world. </p>
+                <p class="paragraph_home col-sm-12">{{ trans('labels.a2') }}</p>
             </div>
             <div class="row">
-                <h1 class="titolo_faq col-sm-12">Why should I choose Soccer-Hub?</h1>
+                <h1 class="titolo_faq col-sm-12">{{ trans('labels.q3') }}</h1>
             </div>
             <div class="row">
-                <p class="paragraph_home col-sm-12">because it was created by someone who loves football just like you, in order to offer everything you've always wanted.</p>
+                <p class="paragraph_home col-sm-12">{{ trans('labels.a3') }}</p>
             </div>
             <div class="row">
-                <h1 class="titolo_faq col-sm-12">How can I use Soccer-Hub?</h1>
+                <h1 class="titolo_faq col-sm-12">{{ trans('labels.q4') }}</h1>
             </div>
             <div class="row">
-                <p class="paragraph_home col-sm-12">Click on the button at the top right to register and immediately become part of our world</p>
+                <p class="paragraph_home col-sm-12">{{ trans('labels.a4') }}</p>
             </div>
             <div class="col text-center mb-5">
                 <div class="card-body p-4 py-lg-5">
                     <div class="d-flex align-items-center justify-content-center">
                         <div class="text-center">
-                            <div class="h6 fw-bolder">Have more questions?</div>
+                            <div class="h6 fw-bolder">{{ trans('labels.moreQuestion') }}</div>
                             <p class="text-muted mb-4">
-                                Contact us at
+                            {{ trans('labels.contattaci') }}
                                 <br />
                                 <a href="#!">Soccer-Hub.support@domain.com</a>
                             </p>
-                            <div class="h6 fw-bolder">Follow us</div>
+                            <div class="h6 fw-bolder">{{ trans('labels.seguici') }}</div>
                             <!-- bootstrap code for social medi icons -->
                             <div class="d-flex justify-content-center">
                                 <a href="https://www.facebook.com" class="mx-2">

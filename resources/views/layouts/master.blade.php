@@ -53,6 +53,8 @@
           <a class="nav-link" href="{{ route('goToDashboard') }}">Dashboard</a>
         @endif
       </ul>
+      <a href="{{ route('setLang', ['lang' => 'en']) }}" class="nav-link"><img src="{{ url('/') }}/img/flags/en.png" width="30" class="img-rounded"/></a>
+      <a href="{{ route('setLang', ['lang' => 'it']) }}" class="nav-link"><img src="{{ url('/') }}/img/flags/it.png" width="24" class="img-rounded"/></a>
       <!--Parte relativa ai tasti di login e logout -->
        @if($logged)
            <li class="nav-item"><a class="nav-link login_label" href="{{ route('logout') }}"> LOGOUT </a></li>

@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'attaccantiLabel' => 'Attaccanti',
+    'centrocampistiLabel' => 'Centrocampisti',
+    'difensoriLabel' => 'Difensori',
+    'loginLabel' => 'ACCEDI',
+    'registerLabel' => 'REGISTRATI',
+    'logoutLabel' => 'ESCI',
+    'copertina' => 'Un portale Web per lo scouting di nuovi talenti del calcio mondiale.',
+    'hero1' => 'Stai cercando il prossimo calciatore in grado di far esultare milioni di fans in questo modo? Allora Soccer-Hub è il posto giusto!',
+    'hero2' => 'Una piattaforma che ti aiuta a cercare i talenti del futuro tramite analisi dettagliate, la possibilità di seguire da vicino i giocatori che ti interessano e la possibilità di visionare statistiche avanzate pensate per mettere in luce i pro e i contro di ogni giocatore!',
+    'hero3' => 'Accedi alla tua area personale, registrati per godere subito di tutti i benefici o visita la pagina dei top 10 giocatori al mondo divisi per categoria.',
+    'FAQlabel' => 'Domande Frequenti',
+    'q1' => 'Cosa è Soccer-Hub?',
+    'a1' => 'Una piattaforma che ti aiuta a cercare i talenti del futuro tramite analisi dettagliate, la possibilità di seguire da vicino i giocatori che ti interessano e la possibilità di visionare statistiche avanzate pensate per mettere in luce i pro e i contro di ogni giocatore!',
+    'q2' => 'Per chi è pensato?',
+    'a2' => "Soccer-Hub è per tutti coloro che sono interessati al mondo del calcio e alla possibilità di dare un'occhiata più da vicino ai giocatori che sono tra i primi 10 del mondo.",
+    'q3' => 'Perchè dovrei usare Soccer-Hub?',
+    'a3' => "Perché è stato creato da qualcuno che ama il calcio proprio come te, per offrirti tutto ciò che hai sempre desiderato.",
+    'q4' => 'Come posso usare Soccer-Hub?',
+    'a4' => 'Clicca sul pulsante in alto a destra per registrarti ed entrare subito a far parte del nostro mondo!',
+    'moreQuestion' => 'Hai altre domande?',
+    'contattaci' => 'Contattaci a',
+    'seguici' => 'Seguici',
+];
