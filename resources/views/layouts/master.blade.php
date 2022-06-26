@@ -41,11 +41,11 @@
             Top 10
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{{ route('attaccantiTop.index') }}">Attaccanti</a>
+            <a class="dropdown-item" href="{{ route('attaccantiTop.index') }}">{{ trans('labels.attaccantiLabel') }}</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{{ route('centrocampistiTop.index') }}">Centrocampisti</a>
+            <a class="dropdown-item" href="{{ route('centrocampistiTop.index') }}">{{ trans('labels.centrocampistiLabel') }}</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{{ route('difensoriTop.index') }}">Difensori</a>
+            <a class="dropdown-item" href="{{ route('difensoriTop.index') }}">{{ trans('labels.difensoriLabel') }}</a>
           </div>
         </li>
         @if($logged)
@@ -57,10 +57,10 @@
       <a href="{{ route('setLang', ['lang' => 'it']) }}" class="nav-link"><img src="{{ url('/') }}/img/flags/it.png" width="24" class="img-rounded"/></a>
       <!--Parte relativa ai tasti di login e logout -->
        @if($logged)
-           <li class="nav-item"><a class="nav-link login_label" href="{{ route('logout') }}"> LOGOUT </a></li>
+           <li class="nav-item"><a class="nav-link login_label" href="{{ route('logout') }}"> {{ trans('labels.logoutLabel') }} </a></li>
        @else
-            <li class="nav-item"><a class="nav-link login_label" href="{{ route('auth') }}"> LOGIN </a></li>
-            <li class="nav-item"><a class="nav-link login_label" href="{{ route('registr') }}"> REGISTER </a></li>
+            <li class="nav-item"><a class="nav-link login_label" href="{{ route('auth') }}"> {{ trans('labels.loginLabel') }}</a></li>
+            <li class="nav-item"><a class="nav-link login_label" href="{{ route('registr') }}"> {{ trans('labels.registerLabel') }} </a></li>
        @endif
       
        <!-- 
