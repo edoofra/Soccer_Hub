@@ -40,13 +40,13 @@
                 <col width='10%'>
                 <thead>
                     <tr>
-                        <th>Nome</th>
-                        <th>Cognome</th>
+                        <th>{{ trans('labels.nomeLabel') }}</th>
+                        <th>{{ trans('labels.cognomeLabel') }}</th>
                         <th>Squadra</th>
                         <th>@yield('caratteristica')</th>
                         <th>Rank</th>
                         @if($logged)
-                        <th><a class="btn btn-primary" onclick="reveal()">Contatta</a></th> 
+                        <th><a class="btn btn-primary" id="contact-button" onclick="reveal()">{{ trans('labels.contattaLabel') }}</a></th> 
                         @endif
                     </tr>
                 </thead>

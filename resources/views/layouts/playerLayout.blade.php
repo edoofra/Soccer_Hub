@@ -21,7 +21,7 @@
                             </div>
                             <div class="row">
                             <div class="col-sm-12 col-sm-offset-3">
-                                <button name="annulla-submit" class="form-control btn btn-primary btn-annullamento" style="margin-top: 1em">ANNULLA</button>
+                                <button name="annulla-submit" class="form-control btn btn-primary btn-annullamento" style="margin-top: 1em">{{ trans('labels.annullaLabel2') }}</button>
                             </div>
                             </div>
                         </div>

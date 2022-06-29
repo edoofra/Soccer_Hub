@@ -9,7 +9,7 @@
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="{{route('goHome')}}">Home</a></li>
     <li class="breadcrumb-item"><a href= "{{route('goToDashboard')}}">User Dashboard</a></li>
-    <li class="breadcrumb-item" aria-current="page">Cancella Giocatore</li>
+    <li class="breadcrumb-item" aria-current="page">{{ trans('labels.cancellaGiocatoreLabel1') }}</li>
   </ol>
 
   
@@ -22,26 +22,26 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-           <h1> Cancellare giocatore "{{$giocatore->cognome}}" </h1>
-           <p class="paragraph_home"> stai per cancellare il giocatore "{{$giocatore->cognome}}", confermi? </p>
+           <h1> {{ trans('labels.cancellaGiocatoreLabel1') }} "{{$giocatore->cognome}}" </h1>
+           <p class="paragraph_home"> {{ trans('labels.cancellaGiocatoreLabel2') }} "{{$giocatore->cognome}}", {{ trans('labels.confermaLabel1') }} </p>
         </div>
     </div>
     <div class="row">
     <div class="col-md-6">
             <div class="card">
                 <div class='card-body'>
-                    <h5 class="card-title">ANNULLA</h5>
-                    <p>il giocatore <strong> NON sarà rimosso permanentemente dal database</strong>,confermi?</p>
-                    <p><a class="btn btn-secondary" href="{{route('goToDashboard')}}">Torna alla Dashboard</a></p>
+                    <h5 class="card-title">{{ trans('labels.annullaLabel2') }}</h5>
+                    <p>{{ trans('labels.confermaLabel3') }} <strong> {{ trans('labels.annullaLabel1') }}</strong>,{{ trans('labels.confermaLabel1') }}</p>
+                    <p><a class="btn btn-secondary" href="{{route('goToDashboard')}}">{{ trans('labels.annullaLabel3') }}</a></p>
                 </div>
             </div>
         </div>
         <div class="col-md-6">
             <div class="card">
                 <div class='card-body'>
-                    <h5 class="card-title">CONFERMA</h5>
-                    <p>il giocatore <strong>sarà rimosso permanentemente dal database</strong>,confermi?</p>
-                    <p><a class="btn btn-danger" href="{{route('deletePlayer', ['id' => $giocatore->id])}}">Elimina</a></p>
+                    <h5 class="card-title">{{ trans('labels.confermaLabel2') }}</h5>
+                    <p>{{ trans('labels.confermaLabel3') }} <strong>{{ trans('labels.confermaLabel4') }}</strong>,{{ trans('labels.confermaLabel1') }}</p>
+                    <p><a class="btn btn-danger" href="{{route('deletePlayer', ['id' => $giocatore->id])}}">{{ trans('labels.eliminaLabel') }}</a></p>
                 </div>
             </div>
         </div>

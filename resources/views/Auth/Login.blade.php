@@ -2,7 +2,8 @@
 @section('authScript')
 <script type="text/javascript" src="{{ asset('js/controlloCampi.js') }}"></script>
 @endsection
-@section('titolo_sezione','WELCOME BACK')
+@section('titolo_sezione')
+{{ trans('labels.loginLabel1') }}
 @section('action_bottone')
 <form action="{{ route('login') }}" id ="login-form" method="post" style="margin-top: 2em" onsubmit="event.preventDefault(); controlloCampiLogin()">
 @endsection
@@ -22,18 +23,13 @@
     <label for="remember">Remember me</label>
 </div>
 @endsection
-@section('label_bottone','LOGIN')
-@section('question1')
-<div class="form-group">
-    <div class="text-center">
-        <a href="#">Forgot Password?</a>
-    </div>
-</div>
+@section('label_bottone')
+{{ trans('labels.loginLabel2') }}
 @endsection
 @section('question2')
 <div class="form-group">
     <div class="text-center">
-        <a href="{{ route('registr') }}">Don't have an account?</a>
+        <a href="{{ route('registr') }}">{{ trans('labels.loginLabel3') }}</a>
     </div>
 </div>
 @endsection

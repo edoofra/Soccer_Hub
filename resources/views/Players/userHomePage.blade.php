@@ -16,11 +16,16 @@
         <h1 class="h1">DASHBOARD </h1>
     </div>
     <div class="row">
-        <p class="paragraph_home">Here you can find the list of all the players you are currently following!</p>
+        <div class="col-md-8">
+            <p class="paragraph_home">{{ trans('labels.dashboardLabel') }}</p>
+        </div>
+        <div class="col-md-4">
+            <a class="btn btn-success" href="addPlayerForm">{{ trans('labels.aggiungiGiocatoreLabel') }}</a>
+        </div>
     </div>
     <div class="row">
         <div class="col-md-12">
-            <h1 class="h1" style="font-size:1.5em">ATTACCANTI</h1>
+            <h1 class="h1" style="font-size:1.5em">{{ trans('labels.attaccantiLabelM') }}</h1>
             <table class="table table-striped table-hover table-responsive" style="width:100%">
                 <col width='10%'>
                 <col width='10%'>
@@ -32,13 +37,13 @@
                 <col width='10%'>
                 <thead>
                     <tr>
-                        <th>Nome</th>
-                        <th>Cognome</th>
-                        <th>Squadra</th>
-                        <th>Età</th>
-                        <th>Partite</th>
-                        <th>Gol</th>
-                        <th>Assist</th>
+                        <th>{{ trans('labels.nomeLabel') }}</th>
+                        <th>{{ trans('labels.cognomeLabel') }}</th>
+                        <th>{{ trans('labels.squadraLabel') }}</th>
+                        <th>{{ trans('labels.etàLabel') }}</th>
+                        <th>{{ trans('labels.partiteLabel') }}</th>
+                        <th>{{ trans('labels.golLabel') }}</th>
+                        <th>{{ trans('labels.assistLabel') }}</th>
                         <th>More</th>
                     </tr>
                 </thead>
@@ -54,7 +59,7 @@
                         <td> {{ $attaccante->gol }} </td>
                         <td> {{ $attaccante->assist }} </td>
                         <td> <a class="btn btn-primary" href="{{ route('studyPlayer', ['id' => $attaccante->id]) }}">..see more..</a> </td>
-                        <td> <a class="btn btn-danger" href="{{ route('goToDeletePlayerPage', ['id' => $attaccante->id]) }}">Elimina</a> </td>
+                        <td> <a class="btn btn-danger" href="{{ route('goToDeletePlayerPage', ['id' => $attaccante->id]) }}">{{ trans('labels.eliminaLabel') }}</a> </td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -104,7 +109,7 @@
     </br>
     <div class="row">
         <div class="col-md-12">
-            <h1 class="h1" style="font-size:1.5em">CENTROCAMPISTI</h1>
+            <h1 class="h1" style="font-size:1.5em">{{ trans('labels.centrocampistiLabelM') }}</h1>
             <table class="table table-striped table-hover table-responsive" style="width:100%">
                 <col width='10%'>
                 <col width='10%'>
@@ -116,13 +121,13 @@
                 <col width='10%'>
                 <thead>
                     <tr>
-                        <th>Nome</th>
-                        <th>Cognome</th>
-                        <th>Squadra</th>
-                        <th>Età</th>
-                        <th>Partite</th>
-                        <th>Gol</th>
-                        <th>Assist</th>
+                        <th>{{ trans('labels.nomeLabel') }}</th>
+                        <th>{{ trans('labels.cognomeLabel') }}</th>
+                        <th>{{ trans('labels.squadraLabel') }}</th>
+                        <th>{{ trans('labels.etàLabel') }}</th>
+                        <th>{{ trans('labels.partiteLabel') }}</th>
+                        <th>{{ trans('labels.golLabel') }}</th>
+                        <th>{{ trans('labels.assistLabel') }}</th>
                         <th>More</th>
                     </tr>
                 </thead>
@@ -138,7 +143,7 @@
                         <td> {{ $centrocampista->gol }} </td>
                         <td> {{ $centrocampista->assist }} </td>
                         <td> <a class="btn btn-primary" href="{{ route('studyPlayer', ['id' => $centrocampista->id]) }}">..see more..</a> </td>
-                        <td> <a class="btn btn-danger" href="{{ route('goToDeletePlayerPage', ['id' => $centrocampista->id]) }}">Elimina</a> </td>
+                        <td> <a class="btn btn-danger" href="{{ route('goToDeletePlayerPage', ['id' => $centrocampista->id]) }}">{{ trans('labels.eliminaLabel') }}</a></td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -188,7 +193,7 @@
     </br>
     <div class="row">
         <div class="col-md-12">
-            <h1 class="h1" style="font-size:1.5em">DIFENSORI</h1>
+            <h1 class="h1" style="font-size:1.5em">{{ trans('labels.difensoriLabelM') }}</h1>
             <table class="table table-striped table-hover table-responsive" style="width:100%">
                 <col width='10%'>
                 <col width='10%'>
@@ -200,13 +205,13 @@
                 <col width='10%'>
                 <thead>
                     <tr>
-                        <th>Nome</th>
-                        <th>Cognome</th>
-                        <th>Squadra</th>
-                        <th>Età</th>
-                        <th>Partite</th>
-                        <th>Clean Sheets</th>
-                        <th>Contrasti Vinti</th>
+                        <th>{{ trans('labels.nomeLabel') }}</th>
+                        <th>{{ trans('labels.cognomeLabel') }}</th>
+                        <th>{{ trans('labels.squadraLabel') }}</th>
+                        <th>{{ trans('labels.etàLabel') }}</th>
+                        <th>{{ trans('labels.partiteLabel') }}</th>
+                        <th>{{ trans('labels.cleansheetLabel') }}</th>
+                        <th>{{ trans('labels.contrastiLabel') }}</th>
                         <th>More</th>
                     </tr>
                 </thead>
@@ -222,7 +227,7 @@
                         <td> {{ $difensore->clean_sheet }} </td>
                         <td> {{ $difensore->contrasti_vinti }} </td>
                         <td> <a class="btn btn-primary" href="{{ route('studyPlayer', ['id' => $difensore->id]) }}">..see more..</a> </td>
-                        <td> <a class="btn btn-danger" href="{{ route('goToDeletePlayerPage', ['id' => $difensore->id]) }}">Elimina</a> </td>
+                        <td> <a class="btn btn-danger" href="{{ route('goToDeletePlayerPage', ['id' => $difensore->id]) }}">{{ trans('labels.eliminaLabel') }}</a></td>
                     </tr>
                     @endforeach
                 </tbody>

@@ -2,7 +2,9 @@
 @section('authScript')
 <script type="text/javascript" src="{{ asset('js/controlloCampi.js') }}"></script>
 @endsection
-@section('titolo_sezione','WELCOME TO SOCCER HUB!')
+@section('titolo_sezione')
+{{ trans('labels.registrazioneLabel1') }}
+@endsection
 @section('action_bottone')
 <form action="{{ route('registration') }}" id="registration-form" method="post" style="margin-top: 2em" onsubmit="event.preventDefault(); controlloCampiRegistrazione()">
 @endsection
@@ -13,7 +15,7 @@
 </div>
 
 <div class="form-group">
-    <input type="text" name="email" id="mail" class="form-control" placeholder="{{ trans('labels.email') }}" value=""/>
+    <input type="text" name="email" id="mail" class="form-control" placeholder="email" value=""/>
     <span class="invalid-input" id="invalid-mail"></span>
 </div>
 
@@ -23,22 +25,24 @@
 </div>
 
 <div class="form-group text-center">
-    <input type="password" name="confirm-password" id="passwordConfirm" class="form-control" placeholder="{{ trans('labels.confirmPassword') }}" value=""/>
+    <input type="password" name="confirm-password" id="passwordConfirm" class="form-control" placeholder="confirm password" value=""/>
     <span class="invalid-input" id="invalid-passwordConfirm"></span>
 </div>
 @endsection
-@section('label_bottone','REGISTER')
+@section('label_bottone')
+{{ trans('labels.registrazioneLabel2') }}
+@endsection
 @section('question1')
 <div class="form-group">
     <div class="text-center">
-        <a href="{{ route('goHome') }}">Have you read our FAQ?</a>
+        <a href="{{ route('goHome') }}">{{ trans('labels.registrazioneLabel3') }}</a>
     </div>
 </div>
 @endsection
 @section('question2')
 <div class="form-group">
     <div class="text-center">
-        <a href="{{ route('auth') }}">Already Registered?</a>
+        <a href="{{ route('auth') }}">{{ trans('labels.registrazioneLabel4') }}</a>
     </div>
 </div>
 @endsection

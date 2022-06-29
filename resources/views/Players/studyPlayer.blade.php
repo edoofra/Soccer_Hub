@@ -14,11 +14,11 @@
 
 <div class="container">
     <div class="row">
-        <h1 class="h1">PLAYER ANALYSIS: {{$giocatore->nome}} {{$giocatore->cognome}}</h1>
+        <h1 class="h1">{{ trans('labels.analisiGiocatoreLabel') }}: {{$giocatore->nome}} {{$giocatore->cognome}}</h1>
     </div>
     </br>
      <div class= "row">
-        <h5> RUOLO: {{$giocatore->ruolo}} </h5>
+        <h5>{{ trans('labels.ruoloLabel') }}: {{$giocatore->ruolo}} </h5>
     </div>   
     <div class="row">
         <div class="col-md-5">
@@ -27,25 +27,25 @@
                 <col width='30%'>
                 <thead>
                     <tr>
-                        <th>Dato</th>
-                        <th>Valore</th>
+                        <th>{{ trans('labels.datoLabel') }}</th>
+                        <th>{{ trans('labels.valoreLabel') }}</th>
                     </tr>
                 </thead>
                 <tbody>
                      <tr>
-                        <td> Partite </td>
+                        <td> {{ trans('labels.partiteLabel') }} </td>
                         <td> {{ $giocatore->partite_giocate }} </td>
                     </tr>
                     <tr>
-                        <td> Gol </td>
+                        <td> {{ trans('labels.golLabel') }} </td>
                         <td> {{ $giocatore->gol }} </td>
                     </tr>
                     <tr>
-                        <td> Assist </td>
+                        <td> {{ trans('labels.assistLabel') }} </td>
                         <td> {{ $giocatore->assist }} </td>
                     </tr>
                     <tr>
-                        <td> Clean Sheet </td>
+                        <td> {{ trans('labels.cleansheetLabel') }}</td>
                         <td> @if("{{$giocatore->ruolo}}" == 'D')
                               {{$giocatore->clean_sheet}} 
                               @else
@@ -53,47 +53,47 @@
                               @endif </td>
                     </tr>
                     <tr>
-                        <td> Tiri tentati </td>
+                        <td> {{ trans('labels.tiriTentatiLabel') }} </td>
                         <td> {{ $giocatore->tiri_tentati }} </td>
                     </tr>
                     <tr>
-                        <td> Tiri in Porta </td>
+                        <td> {{ trans('labels.tiriPortaLabel') }} </td>
                         <td> {{ $giocatore->tiri_in_porta}} </td>
                     </tr>
                     <tr>
-                        <td> Passaggi Tentati </td>
+                        <td> {{ trans('labels.passaggiTentatiLabel') }} </td>
                         <td> {{ $giocatore->passaggi_tentati }} </td>
                     </tr>
                     <tr>
-                        <td> Passaggi Completati </td>
+                        <td> {{ trans('labels.passaggiCompletatiLabel') }} </td>
                         <td> {{ $giocatore->passaggi_completati }} </td>
                     </tr>
                     <tr>
-                        <td> Contrasti Tentati </td>
+                        <td> {{ trans('labels.contrastiTentatiLabel') }} </td>
                         <td> {{ $giocatore->contrasti_tentati}} </td>
                     </tr>
                     <tr>
-                        <td> Contrasti Vinti </td>
+                        <td> {{ trans('labels.contrastiLabel') }} </td>
                         <td> {{ $giocatore->contrasti_vinti }} </td>
                     </tr>
                     <tr>
-                        <td> Ammonizioni </td>
+                        <td> {{ trans('labels.ammonizioniLabel') }} </td>
                         <td> {{ $giocatore->ammonizioni }} </td>
                     </tr>
                     <tr>
-                        <td> Espulsioni </td>
+                        <td> {{ trans('labels.espulsioniLabel') }} </td>
                         <td> {{ $giocatore->espulsioni }} </td>
                     </tr>
                     <tr>
-                        <td> Stipendio </td>
+                        <td> {{ trans('labels.stipendioLabel') }} </td>
                         <td> {{ $giocatore->stipendio }} </td>
                     </tr>
                     <tr>
-                        <td> Valore Mercato </td>
+                        <td> {{ trans('labels.valoreMercatoLabel') }} </td>
                         <td> {{ $giocatore->valore_mercato }} </td>
                     </tr>
                     <tr>
-                        <td> Scadenza Contratto </td>
+                        <td> {{ trans('labels.scadenzaLabel') }} </td>
                         <td> {{ $giocatore->scadenza_contratto }} </td>
                     </tr>
                 </tbody>
