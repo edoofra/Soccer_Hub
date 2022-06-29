@@ -60,6 +60,7 @@
                         <td> {{ $attaccante->assist }} </td>
                         <td> <a class="btn btn-primary" href="{{ route('studyPlayer', ['id' => $attaccante->id]) }}">..see more..</a> </td>
                         <td> <a class="btn btn-danger" href="{{ route('goToDeletePlayerPage', ['id' => $attaccante->id]) }}">{{ trans('labels.eliminaLabel') }}</a> </td>
+                        <td> <a class="btn btn-info" href="{{ route('editPlayerForm', ['id' => $attaccante->id]) }}">{{ trans('labels.modificaGiocatoreLabel3') }}</a> </td>
                     </tr>
                     @endforeach
                 </tbody>

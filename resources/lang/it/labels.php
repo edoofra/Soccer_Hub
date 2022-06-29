@@ -72,7 +72,10 @@ return [
     'registrazioneLabel4' => 'Sei già registrato?',
     'loginLabel1' => 'BENTORNATO!',
     'loginLabel2' => 'ACCEDI',
-    'loginLabel3' => "Non sei registrato?"
+    'loginLabel3' => "Non sei registrato?",
+    'modificaGiocatoreLabel' => 'MODIFICA GIOCATORE',
+    'modificaGiocatoreLabel1' => 'MODIFICA',
+    'modificaGiocatoreLabel3' => 'Modifica',
 
 
 ];

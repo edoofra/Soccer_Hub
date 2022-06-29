@@ -72,7 +72,11 @@ return [
     'registrazioneLabel4' => 'Already Registered?',
     'loginLabel1' => 'WELCOME BACK!',
     'loginLabel2' => 'LOGIN',
-    'loginLabel3' => "Don't have an account?"
+    'loginLabel3' => "Don't have an account?",
+    'modificaGiocatoreLabel' => 'EDIT PLAYER',
+    'modificaGiocatoreLabel1' => 'EDIT',
+    'modificaGiocatoreLabel3' => 'Edit',
+
 
 
 

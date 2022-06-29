@@ -140,12 +140,28 @@ class DataLayer {
         $giocatore->save();
     }
 
-    public function editGiocatore($id,$nome,$cognome,$id_squadra,$ruolo){
+    public function editGiocatore($id,$squadra,$ruolo,$partite,$gol,$assist,$cleansheet,$ammonizioni,$espulsioni,
+                                    $tiriTentati,$tiriPorta,$passaggiTentati,$passaggiCompletati,$contrastiTentati,$contrastiCompletati,
+                                       $stipendio, $valore, $scadenza ){
         $giocatore = giocatore::find($id);
-        $giocatore->nome = $nome;
-        $giocatore->cognome = $cognome;
-        $giocatore->id_squadra = $id_squadra;
+
+        $giocatore->squadra = $squadra;
         $giocatore->ruolo = $ruolo;
+        $giocatore->partite_giocate = $partite;
+        $giocatore->gol = $gol;
+        $giocatore->assist = $assist;
+        $giocatore->clean_sheet = $cleansheet;
+        $giocatore->ammonizioni = $ammonizioni;
+        $giocatore->espulsioni = $espulsioni;
+        $giocatore->tiri_tentati = $tiriTentati;
+        $giocatore->tiri_in_porta = $tiriPorta;
+        $giocatore->passaggi_tentati = $passaggiTentati;
+        $giocatore->passaggi_completati = $passaggiCompletati;
+        $giocatore->contrasti_tentati = $contrastiTentati;
+        $giocatore->contrasti_vinti = $contrastiCompletati;
+        $giocatore->stipendio = $stipendio;
+        $giocatore->valore_mercato = $valore;
+        $giocatore->scadenza_contratto = $scadenza;
         $giocatore->save();
     }
 

@@ -31,6 +31,8 @@ Route::middleware(['authCustom','lang'])->group(function () {
     //rotte per la gestione dei giocatori
     Route::get('/addPlayerForm',[PlayerController::class,'goToAggiuntaGiocatore'])->name('addPlayerForm');
     Route::post('/addPlayer',[PlayerController::class,'AggiungiGiocatore'])->name('addPlayer');
+    Route::get('/editPlayerForm/{id}',[PlayerController::class,'goToEditPlayer'])->name('editPlayerForm');
+    Route::post('/editPlayer/{id}',[PlayerController::class,'editGiocatore'])->name('editPlayer');
     Route::get('/goToDashboard',[PlayerController::class,'goToDashboard'])->name('goToDashboard');
     Route::get('/deletePlayerPage/{id}',[PlayerController::class,'goToDeletePlayerPage'])->name('goToDeletePlayerPage');
     Route::get('/deletePlayer/{id}',[PlayerController::class,'deletePlayer'])->name('deletePlayer');

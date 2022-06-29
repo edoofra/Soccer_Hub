@@ -22,7 +22,7 @@ class PlayerController extends Controller
         $dl = new DataLayer();
         $user_id = $dl->getUserId($_SESSION['loggedName']);
         $dl->addGiocatore($request->input('nome'), $request->input('cognome'), $request->input('età'), $request->input('squadra'),$user_id, $request->input('ruolo'));
-        return Redirect::to(route('goHome'));
+        return Redirect::to(route('goToDashboard'));
     }
 
     public function checkNomeCognome(Request $request){
@@ -68,5 +68,21 @@ class PlayerController extends Controller
         $valori = $dl->creaRiassuntoValori($id);
         $giocatore = $dl->findGiocatoreById($id);
         return view('Players.studyPlayer')->with('logged',true)->with('loggedName', $_SESSION['loggedName'])->with('giocatore',$giocatore)->with('valori',$valori);
+    }
+
+    public function goToEditPlayer($id){
+        $dl = new DataLayer();
+        $giocatore = $dl->findGiocatoreById($id);
+        return view('Players.editPlayer')->with('logged',true)->with('loggedName', $_SESSION['loggedName'])->with('giocatore',$giocatore);
+    }
+
+    public function editGiocatore($id,Request $request){
+        $dl = new DataLayer();
+        $dl->editGiocatore($id,$request->input('squadra'), $request->input('ruolo'),
+                            $request->input('partite'),$request->input('gol'),$request->input('assist'),$request->input('cleansheet'),$request->input('ammonizioni'),
+                            $request->input('espulsioni'),$request->input('tiriTentati'),$request->input('tiriPorta'),$request->input('passaggiTentati'),$request->input('passaggiCompletati'),
+                            $request->input('contrastiTentati'),$request->input('contrastiCompletati'),$request->input('stipendio'),$request->input('valore'),$request->input('scadenza'));
+        return Redirect::to(route('goToDashboard'));
+
     }
 }
