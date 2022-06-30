@@ -53,6 +53,42 @@ function controlloCampiLogin() {
     }
 }
 
+function controlloCampiAddGiocatore() {
+
+    nome = $("#nome");
+    cognome = $("#cognome");
+    eta = $("#età");
+    squadra = $("#squadra");
+    ruolo = $("#ruolo");
+    
+
+    if (nome.val().trim() === "") {
+        alert("The username field must not be empty");
+        nome.focus();
+        return false;
+    }else if(cognome.val().trim() === ""){
+        alert("The password field must not be empty");
+        cognome.focus();
+        return false;
+    }else if(eta.val().trim() === ""){
+        alert("The età field must not be empty");
+        eta.focus();
+        return false;
+    }else if(squadra.val().trim() === ""){
+        alert("The squadra field must not be empty");
+        squadra.focus();
+        return false;
+    }else if(ruolo.val().trim() === ""){
+        alert("The password field must not be empty");
+        ruolo.focus();
+        return false;
+
+    }else{
+        var form = document.getElementById("add-form");
+        form.submit();
+    }
+}
+
 function controlloCampiRegistrazione() {
 
     username = $("#username");

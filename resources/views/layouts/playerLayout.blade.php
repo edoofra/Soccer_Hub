@@ -1,4 +1,7 @@
 @extends('layouts.master')
+@section('script')
+<script type="text/javascript" src="{{ asset('js/controlloCampi.js') }}"></script>
+@endsection
 @section('contenuto_pagina')
 <div class="container">
         <div class="row text-center" style="margin-top: 4em">
