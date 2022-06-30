@@ -76,6 +76,13 @@ return [
     'modificaGiocatoreLabel' => 'MODIFICA GIOCATORE',
     'modificaGiocatoreLabel1' => 'MODIFICA',
     'modificaGiocatoreLabel3' => 'Modifica',
+    'authErrorLabel1' => 'ERRORE DI AUTENTICAZIONE',
+    'authErrorLabel2' => 'I dati inseriti non sono corretti e non sono stati trovati sul database.',
+    'authErrorLabel3' => "Se non ti sei ancora registrato puoi farlo cliccando",
+    'authErrorLabel4' => 'QUI',
+    'authErrotLabel5' => 'TORNA ALLA HOME',
+    'playerErrorLabel1' => 'ERRORE OPERAZIONE GIOCATORE',
+    'playerErrorLabel2' => 'ID non corrisponde a nessun giocatore inserito nel database.',
 
 
 ];

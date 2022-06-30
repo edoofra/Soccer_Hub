@@ -27,8 +27,7 @@ class AuthController extends Controller
             return Redirect::to(route('goHome'));
 
         }
-       
-        //return view('auth.authErrorPage');
+        return view('Auth.authErrorPage');
     }
 
     public function registration(Request $request) {

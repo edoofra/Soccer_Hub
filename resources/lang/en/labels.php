@@ -76,6 +76,13 @@ return [
     'modificaGiocatoreLabel' => 'EDIT PLAYER',
     'modificaGiocatoreLabel1' => 'EDIT',
     'modificaGiocatoreLabel3' => 'Edit',
+    'authErrorLabel1' => 'AUTHENTICATION ERROR',
+    'authErrorLabel2' => 'The data entered is incorrect and could not be found on the database.',
+    'authErrorLabel3' => "If you haven't registered yet, you can do so by clicking",
+    'authErrorLabel4' => 'HERE',
+    'authErrorLabel5' => 'GO BACK HOME',
+    'playerErrorLabel1' => 'PLAYER ERROR',
+    'playerErrorLabel2' => 'ID does not match any player entered in the database.',
 
 
 
