@@ -89,6 +89,116 @@ function controlloCampiAddGiocatore() {
     }
 }
 
+function controlloCampiEditGiocatore() {
+
+    partite = $("#partite");
+    gol = $("#gol");
+    assist = $("#assist");
+    squadra= $("#squadra");
+    ruolo = $("#ruolo");
+    cl = $("#cl");
+    tiriTentati = $("#tiri_tentati");
+    tiriPorta = $("#tiriPorta");
+    passaggiTentati = $("#passaggi_tentati");
+    passaggiCompletati = $("#passaggi_completati");
+    contrastiTentati = $("#contrasti_tentati");
+    contrastiVinti = $("#contrasti_vinti");
+    ammonizioni = $("#ammonizioni");
+    espulsioni = $("#espulsioni");
+    stipendio = $("#stipendio");
+    valoreMercato = $("#valore_mercato");
+    scadenza = $("#scadenza");
+    
+    
+
+    if (partite.val().trim() === "") {
+        alert("The partite field must not be empty");
+        partite.focus();
+        return false;
+    }else if(gol.val().trim() === ""){
+        alert("The gol field must not be empty");
+        gol.focus();
+        return false;
+    }else if(assist.val().trim() === ""){
+        alert("The assist field must not be empty");
+        assist.focus();
+        return false;
+    }else if(squadra.val().trim() === ""){
+        alert("The squadra field must not be empty");
+        squadra.focus();
+        return false;
+    }else if(partite.val().trim() === ""){
+        alert("The partite field must not be empty");
+        partite.focus();
+        return false;
+    }else if(ruolo.val().trim() === ""){
+        alert("The password field must not be empty");
+        ruolo.focus();
+        return false;
+    }else if(gol.val().trim() === ""){
+        alert("The gol field must not be empty");
+        gol.focus();
+        return false;
+    }else if(assist.val().trim() === ""){
+        alert("The assist field must not be empty");
+        assist.focus();
+        return false;
+    }else if(cl.val().trim() === ""){
+        alert("The clean sheet field must not be empty");
+        cl.focus();
+        return false;
+    }else if(tiriTentati.val().trim() === ""){
+        alert("The tiri tentati field must not be empty");
+        tiriTentati.focus();
+        return false;
+    }else if(tiriPorta.val().trim() === ""){
+        alert("The tiri in porta field must not be empty");
+        tiriPorta.focus();
+        return false;
+    }else if(passaggiTentati.val().trim() === ""){
+        alert("The passaggi tentati field must not be empty");
+        passaggiTentati.focus();
+        return false;
+    }else if(passaggiCompletati.val().trim() === ""){
+        alert("The passaggi completati field must not be empty");
+        passaggiCompletati.focus();
+        return false;
+    }else if(contrastiTentati.val().trim() === ""){
+        alert("The contrasti tentati field must not be empty");
+        contrastiTentati.focus();
+        return false;
+    }else if(contrastiVinti.val().trim() === ""){
+        alert("The contrasti vinti field must not be empty");
+        contrastiVinti.focus();
+        return false;
+    }else if(stipendio.val().trim() === ""){
+        alert("The stipendio field must not be empty");
+        stipendio.focus();
+        return false;
+    }else if(ammonizioni.val().trim() === ""){
+        alert("The ammonizioni field must not be empty");
+        ammonizioni.focus();
+        return false;
+    }else if(espulsioni.val().trim() === ""){
+        alert("The espulsioni field must not be empty");
+        espulsioni.focus();
+        return false;
+    }else if(valoreMercato.val().trim() === ""){
+        alert("The valore mercato field must not be empty");
+        valoreMercato.focus();
+        return false;
+    }else if(scadenza.val().trim() === ""){
+        alert("The scadenza contratto field must not be empty");
+        scadenza.focus();
+        return false;
+
+
+    }else{
+        var form = document.getElementById("edit-form");
+        form.submit();
+    }
+}
+
 function controlloCampiRegistrazione() {
 
     username = $("#username");
