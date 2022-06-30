@@ -6,7 +6,7 @@
                 <div class="tab-content">
                     <div class="row-fluid text-center" style="margin-top: 1em">
                         <a href="{{ route('goHome') }}">
-                        <img src="{{ url('/') }}/imgLoghi.jpeg" class="img-fluid">
+                        @yield('immagine')
                         </a> 
                     </div>
                     <div class="row-fluid text-center" style="margin-top: 1em">

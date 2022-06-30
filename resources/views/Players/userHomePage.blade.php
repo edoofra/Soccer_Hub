@@ -145,6 +145,7 @@
                         <td> {{ $centrocampista->assist }} </td>
                         <td> <a class="btn btn-primary" href="{{ route('studyPlayer', ['id' => $centrocampista->id]) }}">..see more..</a> </td>
                         <td> <a class="btn btn-danger" href="{{ route('goToDeletePlayerPage', ['id' => $centrocampista->id]) }}">{{ trans('labels.eliminaLabel') }}</a></td>
+                        <td> <a class="btn btn-info" href="{{ route('editPlayerForm', ['id' => $centrocampista->id]) }}">{{ trans('labels.modificaGiocatoreLabel3') }}</a> </td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -229,6 +230,7 @@
                         <td> {{ $difensore->contrasti_vinti }} </td>
                         <td> <a class="btn btn-primary" href="{{ route('studyPlayer', ['id' => $difensore->id]) }}">..see more..</a> </td>
                         <td> <a class="btn btn-danger" href="{{ route('goToDeletePlayerPage', ['id' => $difensore->id]) }}">{{ trans('labels.eliminaLabel') }}</a></td>
+                        <td> <a class="btn btn-info" href="{{ route('editPlayerForm', ['id' => $difensore->id]) }}">{{ trans('labels.modificaGiocatoreLabel3') }}</a> </td>
                     </tr>
                     @endforeach
                 </tbody>

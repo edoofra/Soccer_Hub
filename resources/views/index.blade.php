@@ -49,9 +49,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 text-center">
-                <button type="button" class="btn btn-primary btn-lg" id="prova1">{{ trans('labels.loginLabel') }}</button>
-                <button type="button" class="btn btn-primary btn-lg">{{ trans('labels.registerLabel') }}</button>
-                <button type="button" class="btn btn-primary btn-lg">Top 10</button>
+                <a class="btn btn-primary" href="{{route('auth')}}"> {{ trans('labels.loginLabel') }}</a>
+                <a class="btn btn-primary" href="{{route('registr')}}">{{ trans('labels.registerLabel') }}</a>
+                <a class="btn btn-primary" href="{{route('attaccantiTop.index')}}">Top 10</a>
             </div>
         </div>
     </div>

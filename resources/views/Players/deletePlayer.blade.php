@@ -17,7 +17,7 @@
 <div class="container text-center">
     <div class="row-fluid text-center" style="margin-top: 1em">
         <a href="{{ route('goHome') }}">
-            <img src="{{ url('/') }}/imgLoghi.jpeg" class="img-fluid">
+            <img src="{{ url('/') }}/img/delete.jpg" class="img-fluid">
         </a> 
     </div>
     <div class="row">

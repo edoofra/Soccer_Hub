@@ -4,6 +4,7 @@
 @endsection
 @section('titolo_sezione')
 {{ trans('labels.loginLabel1') }}
+@endsection
 @section('action_bottone')
 <form action="{{ route('login') }}" id ="login-form" method="post" style="margin-top: 2em" onsubmit="event.preventDefault(); controlloCampiLogin()">
 @endsection

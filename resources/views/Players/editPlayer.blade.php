@@ -2,6 +2,9 @@
 @section('titolo_sezione')
 {{ trans('labels.modificaGiocatoreLabel') }}: {{$giocatore->nome}} {{$giocatore->cognome}}
 @endsection
+@section('immagine')
+<img src="{{ url('/') }}/img/edit.jpg" class="img-fluid">
+@endsection
 @section('action_bottone')
 <form action="{{ route('editPlayer',['id' => $giocatore->id]) }}" id ="login-form" method="post" style="margin-top: 2em">
 @endsection

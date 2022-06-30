@@ -2,6 +2,9 @@
 @section('titolo_sezione')
 {{ trans('labels.aggiungiGiocatoreLabel') }}
 @endsection
+@section('immagine')
+<img src="{{ url('/') }}/img/add.jpg" class="img-fluid">
+@endsection
 @section('action_bottone')
 <form action="{{ route('addPlayer') }}" id ="login-form" method="post" style="margin-top: 2em">
 @endsection

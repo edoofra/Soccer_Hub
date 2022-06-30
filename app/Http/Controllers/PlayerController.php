@@ -54,18 +54,11 @@ class PlayerController extends Controller
     public function deletePlayer($id){
         //session_start();
         $dl = new DataLayer();
-
-        $giocatore = $dl->findGiocatoreById($id);
-        if($giocatore != null){
-            $dl->deletePlayer($id);
-            $attaccanti = $dl->listAttaccantiByUserID($dl->getUserId($_SESSION['loggedName']));
-            $centrocampisti = $dl->listCentrocampistiByUserID($dl->getUserId($_SESSION['loggedName']));
-            $difensori = $dl->listDifensoriByUserID($dl->getUserId($_SESSION['loggedName']));
-            return view('Players.userHomePage')->with('logged',true)->with('loggedName', $_SESSION['loggedName'])->with('listaAttaccanti', $attaccanti)
-                    ->with('listaCentrocampisti', $centrocampisti)->with('listaDifensori', $difensori); 
-        }else {
-            return view('Players.playerError')->with('logged',true)->with('loggedName', $_SESSION['loggedName']);
-        } 
+        $dl->deletePlayer($id);
+        $attaccanti = $dl->listAttaccantiByUserID($dl->getUserId($_SESSION['loggedName']));
+        $centrocampisti = $dl->listCentrocampistiByUserID($dl->getUserId($_SESSION['loggedName']));
+        $difensori = $dl->listDifensoriByUserID($dl->getUserId($_SESSION['loggedName']));
+        return view('index')->with('logged',true)->with('loggedName', $_SESSION['loggedName']);
     }
 
     public function studyPlayer($id){
@@ -84,19 +77,10 @@ class PlayerController extends Controller
 
     public function editGiocatore($id,Request $request){
         $dl = new DataLayer();
-
-        $giocatore = $dl->findGiocatoreById($id);
-        if($giocatore != null){
-            $dl->editGiocatore($id,$request->input('squadra'), $request->input('ruolo'),
+        $dl->editGiocatore($id,$request->input('squadra'), $request->input('ruolo'),
                             $request->input('partite'),$request->input('gol'),$request->input('assist'),$request->input('cleansheet'),$request->input('ammonizioni'),
                             $request->input('espulsioni'),$request->input('tiriTentati'),$request->input('tiriPorta'),$request->input('passaggiTentati'),$request->input('passaggiCompletati'),
                             $request->input('contrastiTentati'),$request->input('contrastiCompletati'),$request->input('stipendio'),$request->input('valore'),$request->input('scadenza'));
-            return Redirect::to(route('goToDashboard'));
-
-        }else{
-            return view('Players.playerError')->with('logged',true)->with('loggedName', $_SESSION['loggedName']);
-        }
-
-        
+        return Redirect::to(route('goHome'));
     }
 }
