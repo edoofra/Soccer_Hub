@@ -63,11 +63,11 @@ function controlloCampiAddGiocatore() {
     
 
     if (nome.val().trim() === "") {
-        alert("The username field must not be empty");
+        alert("The nome field must not be empty");
         nome.focus();
         return false;
     }else if(cognome.val().trim() === ""){
-        alert("The password field must not be empty");
+        alert("The cognome field must not be empty");
         cognome.focus();
         return false;
     }else if(eta.val().trim() === ""){
@@ -79,7 +79,7 @@ function controlloCampiAddGiocatore() {
         squadra.focus();
         return false;
     }else if(ruolo.val().trim() === ""){
-        alert("The password field must not be empty");
+        alert("The ruolo field must not be empty");
         ruolo.focus();
         return false;
 
