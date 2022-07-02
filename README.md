@@ -2,8 +2,9 @@
 
 Soccer-Hub is my project for the course "Programmazione Web e Servizi Digitali" carried out at UNIBS.
 The purpose of this website is to simulate the soccer-scout world.
+There are two types of users: the basic user can only see the list of the top 10 players, while the registered user can add their own players and view advanced statistics.
 
-For this project i have used the framework Laravel and Bootstrap for the CSS parts.
+For this project i used the framework Laravel and Bootstrap for the CSS parts. I also used the Javascript Charts.js library for the dynamic creation of graphs showing player statistics.
 
 
 
